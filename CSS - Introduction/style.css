@@ -1,0 +1,79 @@
+/* External CSS
+h4 {
+    font-size: 30px;
+} */
+
+/* 
+* {
+    This is a universal selector, whatever you write here is applied to everything 
+    
+} 
+*/
+
+body {
+    /* This is a type selector, you can mention which HTML element you want to style in a particular way */
+    background-color: #F3F2EF;
+}
+
+header {
+    /* This is a type selector, you can mention which HTML element you want to style in a particular way */
+    background-color: white;
+}
+
+.mid-text {
+    /* Class Selector - The CSS class selector matches elements based on the contents of their class attribute. */
+    font-weight: bolder;
+    font-size: medium;
+}
+
+#head-text {
+    /* Id Selector - The CSS ID selector matches an element based on the value of the element's id attribute. In order for the element to be selected, its id attribute must match exactly the value given in the selector. */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+input[disabled] {
+    /* Attribute Selector - The CSS attribute selector matches elements based on the element having a given attribute explicitly set, with options for defining an attribute value or substring value match. */
+    background-color: beige;
+}
+
+div span {                  /* Descendant Combinator */
+    color: cadetblue;
+}
+
+div .extra {                /* Descendant Combinator */
+    font-weight: bolder;
+    font-size: medium;
+    text-decoration-line: underline;
+}
+
+h2 ~ h4 {                   /* General Sibling combinator */
+    color: chocolate;
+}
+
+div + h4 {                  /* Adjacent Sibling combinator */
+    color: chocolate;
+}
+
+/* Pseudo classes and Pseudo Elements */
+a:hover {
+    text-decoration: none;
+}
+
+a :visited{
+    color: red;
+}
+
+div::before{
+    content: '...';
+}
+
+div::after{
+    content: '...';
+}
+
+div :first-child{
+    color: blue;
+}
+
+/* developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors */

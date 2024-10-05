@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/HTML%20-%20Introduction/HTML%20-%20Practice/Meta%20and%20Core%20web%20Vitals.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/HTML%20-%20Introduction/HTML%20-%20Practice/Meta%20and%20Core%20web%20Vitals.html"
+        }
+    ]
+}

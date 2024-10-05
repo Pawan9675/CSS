@@ -1,0 +1,66 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#parent {
+    /* Flex Container */
+
+    border: solid red 10px;
+    display: flex;
+    height: 500px;
+
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: row; */
+    /* flex-wrap: nowrap; */
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
+
+    /* to arrange the elements on the main axis */
+    justify-content: start;
+    /* justify-content: end; */
+    /* justify-content: center; */
+    /* justify-content: space-evenly; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+
+    /* to arrange the elements on the cross axis */
+    /* align-items: start; */
+    /* align-items: end; */
+    /* align-items: center; */
+    /* align-items: stretch; */
+    align-items: normal;
+
+    /* to arrange the elements on the cross axis */
+    align-content: start;
+    /* align-content: end; */
+    /* align-content: space-evenly; */
+    /* align-content: space-between; */
+}
+
+#parent div {
+    /* Flex Items */
+
+    border: solid blue 2px;
+    padding: 20px;
+    background-color: bisque;
+    min-width: 100px;
+    /* max-width: 200px; */
+    max-height: 100px;
+}
+
+#child1 {
+    /* flex-basis: 100%; */
+    flex-grow: 2;
+}
+
+#child2 {
+    flex-grow: 1;
+}
+
+/* https://flexboxfroggy.com/ */
