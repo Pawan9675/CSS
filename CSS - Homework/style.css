@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.post {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    position: relative;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.user-info {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.user-info .name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.user-info .details {
+    font-size: 12px;
+    color: gray;
+}
+
+.time {
+    font-size: 12px;
+    color: gray;
+}
+
+.post-options {
+    color: gray;
+    font-size: 18px;
+}
+
+.post-content {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.see-more {
+    color: gray;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.post-reactions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: gray;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.reaction-icons {
+    display: flex;
+    align-items: center;
+}
+
+.reaction-icon {
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.like-count {
+    margin-left: 5px;
+}
+
+.comment-repost {
+    color: gray;
+    font-size: 12px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: gray;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.post-actions button i {
+    margin-right: 5px;
+}
+
+.post-actions button:hover {
+    color: black;
+}
