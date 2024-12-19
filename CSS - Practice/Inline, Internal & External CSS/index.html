@@ -3,39 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- 
-    Internal CSS: 
+    <title>CSS in Action: Inline, Internal, and External</title>
+    
+    <!-- Internal CSS: Defined in a <style> block inside the <head> -->
     <style>
-        h1{
-            background-color: red;
-            color: yellow;
+        /* Internal CSS */
+        h1 {
+            color: purple;
+            background-color: lightgray;
         }
 
-    </style> 
-    -->
+        .highlight {
+            background-color: yellow;
+            color: black;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: darkgreen;
+        }
+
+        #unique {
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        /* Styling the anchor link */
+        a {
+            color: darkblue;
+        }
+
+        a:hover {
+            color: orange;
+        }
+    </style>
+
+    <!-- External CSS (linking to an external stylesheet file) -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 
-    Inline CSS:
-    <h1 style="color: yellow; background-color: red;">Three ways to add CSS to HTML</h1>
-    -->
-    <h1>Three ways to add CSS to HTML</h1>
+    <!-- Inline CSS: Directly added to the element -->
+    <h1 style="color: red; background-color: yellow;">Three Ways to Add CSS</h1>
+
     <div>
-        <ol>
-            <li>Inline CSS</li>
-            <li>Internal CSS</li>
-            <li>External CSS</li>
-        </ol>
+        <p>This paragraph is styled using Internal CSS, set within the tag </p>
+        <p class="highlight">This paragraph uses a Class Selector from Internal CSS.</p>
     </div>
-    <p>Everyone is good in some way or the other. Does this even make any sense?</p>
+
+    <!-- Using External CSS for a consistent theme across multiple pages -->
+    <div id="unique">
+        This div is styled using an ID selector from External CSS (style.css).
+    </div>
+
+    <!-- Inline CSS on the link -->
+    <a href="https://example.com" style="color: green;">Visit Example</a>
+
+    <div>
+        <p style="font-weight: bold;">This paragraph has Inline CSS to make the text bold.</p>
+        <p style="font-size: 1.5rem; color: darkblue;">This one uses Inline CSS to change font size and color.</p>
+    </div>
 </body>
 </html>
-
-<!-- 
-There are 3 ways to add CSS to HTML:
-    1. Inline CSS - This is used in an HTML page using style attributes.
-    2. Internal CSS - It means to add a style tag and place the HTML page's style within it.
-    3. External CSS - It means to create a .css file and place all your styles inside that .css file.
- -->

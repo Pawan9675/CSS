@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sizing Units Explained</title>
+    <style>
+        /* Resetting margins and padding for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Setting the root font size for rem and em calculations */
+        html {
+            font-size: 16px; /* 1rem = 16px */
+        }
+
+        /* --- Absolute Units --- */
+        .absolute-units {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .absolute-units h2 {
+            color: darkblue;
+        }
+
+        .cm-box, .mm-box, .in-box, .pt-box, .px-box {
+            margin: 20px auto;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        .cm-box {
+            width: 10cm; /* 10 centimeters */
+            height: 5cm; /* 5 centimeters */
+            background-color: lightblue;
+        }
+
+        .mm-box {
+            width: 50mm; /* 50 millimeters */
+            height: 30mm; /* 30 millimeters */
+            background-color: lightgreen;
+        }
+
+        .in-box {
+            width: 4in; /* 4 inches */
+            height: 2in; /* 2 inches */
+            background-color: lightyellow;
+        }
+
+        .pt-box {
+            width: 200pt; /* 200 points */
+            height: 100pt; /* 100 points */
+            background-color: lightcoral;
+        }
+
+        .px-box {
+            width: 200px; /* 200 pixels */
+            height: 100px; /* 100 pixels */
+            background-color: lightgray;
+        }
+
+        /* --- Relative Units --- */
+        .relative-units {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .relative-units h2 {
+            color: darkgreen;
+        }
+
+        .em-box, .rem-box, .vw-box, .vh-box, .percent-box, .vmin-box, .vmax-box, .ch-box, .ex-box {
+            margin: 20px auto;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        .em-box {
+            font-size: 2em; /* 2 times the parent font size */
+            width: 10em; /* 10 times the current font size */
+            height: 5em; /* 5 times the current font size */
+            background-color: lightpink;
+        }
+
+        .rem-box {
+            font-size: 2rem; /* 2 times the root font size (16px * 2 = 32px) */
+            width: 20rem; /* 20 times the root font size (16px * 20 = 320px) */
+            height: 10rem; /* 10 times the root font size (16px * 10 = 160px) */
+            background-color: lightseagreen;
+        }
+
+        .vw-box {
+            width: 50vw; /* 50% of the viewport width */
+            height: 10vh; /* 10% of the viewport height */
+            background-color: lightsteelblue;
+        }
+
+        .vh-box {
+            width: 50vw; /* 50% of the viewport width */
+            height: 20vh; /* 20% of the viewport height */
+            background-color: lavender;
+        }
+
+        .percent-box {
+            width: 50%; /* 50% of the parent element’s width */
+            height: 50%; /* 50% of the parent element’s height */
+            background-color: lightgoldenrodyellow;
+        }
+
+        .vmin-box {
+            width: 50vmin; /* 50% of the smaller dimension of the viewport (width or height) */
+            height: 10vmin; /* 10% of the smaller dimension */
+            background-color: lightcyan;
+        }
+
+        .vmax-box {
+            width: 50vmax; /* 50% of the larger dimension of the viewport (width or height) */
+            height: 10vmax; /* 10% of the larger dimension */
+            background-color: mistyrose;
+        }
+
+        .ch-box {
+            width: 10ch; /* 10 times the width of the character "0" */
+            height: 5ch; /* 5 times the width of the character "0" */
+            background-color: peachpuff;
+        }
+
+        .ex-box {
+            width: 5ex; /* 5 times the X-height of the current font */
+            height: 3ex; /* 3 times the X-height */
+            background-color: lemonchiffon;
+        }
+
+        /* --- Other Metrics --- */
+        .opacity-box {
+            width: 200px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.5); /* Red color with 50% opacity */
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+
+        .color-box {
+            width: 200px;
+            height: 100px;
+            background-color: hsl(120, 100%, 50%); /* Green color using HSL */
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+
+        .rgba-box {
+            width: 200px;
+            height: 100px;
+            background-color: rgba(0, 0, 255, 0.5); /* Blue color with 50% opacity */
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+
+        /* Explanation Section */
+        .explanation {
+            margin-top: 40px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Sizing Units Explained</h1>
+
+    <div class="explanation">
+        <p>In this example, we will explore the different <strong>absolute</strong> and <strong>relative</strong> units of measurement in CSS, including their behavior and use cases.</p>
+
+        <h2>Absolute Units:</h2>
+        <p>Absolute units provide fixed sizes, regardless of the viewport or parent element's size. They are typically used for precise control over an element's dimensions. Here are the most commonly used absolute units:</p>
+        <ul>
+            <li><strong>cm</strong> - Centimeters (1 cm = 37.8 px)</li>
+            <li><strong>mm</strong> - Millimeters</li>
+            <li><strong>in</strong> - Inches (1 in = 96 px = 2.54 cm)</li>
+            <li><strong>pt</strong> - Points (1 pt = 1/72 of 1 in)</li>
+            <li><strong>pc</strong> - Picas (1 pc = 1/6 of 1 in)</li>
+            <li><strong>px</strong> - Pixels (1px = 1/96 of 1 in)</li>
+        </ul>
+        <p>Examples of these absolute units are demonstrated in the boxes below:</p>
+
+        <div class="absolute-units">
+            <h2>Absolute Units</h2>
+            <div class="cm-box">10cm by 5cm</div>
+            <div class="mm-box">50mm by 30mm</div>
+            <div class="in-box">4in by 2in</div>
+            <div class="pt-box">200pt by 100pt</div>
+            <div class="px-box">200px by 100px</div>
+        </div>
+
+        <h2>Relative Units:</h2>
+        <p>Relative units depend on the size of other properties, such as the parent element's font size or the viewport dimensions. These are useful for creating flexible and responsive designs:</p>
+        <ul>
+            <li><strong>em</strong> - Relative to the font size of the parent element</li>
+            <li><strong>rem</strong> - Relative to the font size of the root element</li>
+            <li><strong>vw</strong> - Relative to 1% of the viewport width</li>
+            <li><strong>vh</strong> - Relative to 1% of the viewport height</li>
+            <li><strong>%</strong> - Relative to the parent element's size</li>
+            <li><strong>vmin</strong> - Relative to 1% of the smaller dimension of the viewport (either width or height)</li>
+            <li><strong>vmax</strong> - Relative to 1% of the larger dimension of the viewport (either width or height)</li>
+            <li><strong>ch</strong> - Relative to the width of the character "0"</li>
+            <li><strong>ex</strong> - Relative to the height of the letter "x" in the current font</li>
+        </ul>
+        <p>Examples of these relative units are demonstrated in the boxes below:</p>
+
+        <div class="relative-units">
+            <h2>Relative Units</h2>
+            <div class="em-box">10em by 5em</div>
+            <div class="rem-box">20rem by 10rem</div>
+            <div class="vw-box">50vw by 10vh</div>
+            <div class="vh-box">50vw by 20vh</div>
+            <div class="percent-box">50% of parent</div>
+            <div class="vmin-box">50vmin by 10vmin</div>
+            <div class="vmax-box">50vmax by 10vmax</div>
+            <div class="ch-box">10ch by 5ch</div>
+            <div class="ex-box">5ex by 3ex</div>
+        </div>
+
+        <h2>Other Metrics:</h2>
+        <p>We can also use other metrics such as <strong>Opacity</strong>, <strong>RGB & RGBA</strong>, and <strong>HSL & HSLA</strong> for styling and color manipulations:</p>
+        <ul>
+            <li><strong>Opacity:</strong> Ranges from 0 (transparent) to 1 (opaque)</li>
+            <li><strong>RGB & RGBA:</strong> Ranges from 0 to 255 for Red, Green, and Blue. RGBA allows you to control opacity (alpha channel) from 0 (transparent) to 1 (opaque).</li>
+            <li><strong>HSL & HSLA:</strong> HSL uses Hue (0-360), Saturation (0-100%), and Lightness (0-100%). HSLA also includes alpha (opacity) values.</li>
+        </ul>
+
+        <div class="opacity-box">Opacity: 0.5</div>
+        <div class="rgba-box">RGBA: 0,0,255,0.5</div>
+        <div class="color-box">HSL: 120,100%,50%</div>
+
+    </div>
+
+</body>
+
+</html>

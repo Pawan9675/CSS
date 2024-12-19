@@ -1,5 +1,33 @@
 /* External CSS */
-h1{
+h1 {
     background-color: red;
     color: yellow;
+}
+
+.highlight {
+    background-color: lightgreen;
+    color: black;
+    padding: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: darkgreen;
+}
+
+#unique {
+    background-color: lightblue;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid darkblue;
+}
+
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: underline;
 }

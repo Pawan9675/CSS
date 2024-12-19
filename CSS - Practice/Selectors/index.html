@@ -3,86 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selectors</title>
-    <!-- 
-    What are CSS Selectors?
-    CSS selectors allow us to choose specific elements and apply styles to them. 
-    -->
+    <title>Complete CSS Selectors Guide</title>
     <style>
-        /* Element Selector  */
-        div{
-            background-color: red;
-        }
-
-        /* Class Selector  */
-        .red{
-            background-color: red;
-        }
-
-        /* Id Selector */
-        #green{
-            background-color: green;
-        }
-
-        /* Child Selectors  */
-        div > p {
-            color: blue;
-            background-color: brown;
-        }
-
-        /* Descendant Selector  */
-        div p {
-            color: blue;
-            background-color: brown;
-        }
-
         /* Universal Selector */
         * {
-            margin:0;
+            box-sizing: border-box;
+            margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
 
-        /* Pseudo Selector  */
-        a:visited{
-            color: yellow
+        /* Element Selector */
+        h1, h2 {
+            color: darkblue;
         }
 
+        /* Class Selector */
+        .highlight {
+            background-color: yellow;
+            color: black;
+            padding: 10px;
+        }
+
+        /* ID Selector */
+        #unique {
+            background-color: lightgreen;
+            border: 2px solid darkgreen;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Group Selector */
+        h1, p, a {
+            text-align: center;
+            color: steelblue;
+        }
+
+        /* Child Selector */
+        div > p {
+            color: navy;
+            background-color: lightyellow;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        /* Descendant Selector */
+        div p {
+            font-style: italic;
+            color: darkgray;
+        }
+
+        /* Adjacent Sibling Selector */
+        h2 + p {
+            color: purple;
+            font-size: 1.2rem;
+        }
+
+        /* General Sibling Selector */
+        h2 ~ p {
+            color: orange;
+        }
+
+        /* Attribute Selector */
+        input[type="text"] {
+            border: 2px solid blue;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            padding: 7px 15px;
+            cursor: pointer;
+        }
+
+        /* Pseudo-classes */
         a:link {
-            color: green;
+            color: darkblue;
         }
 
-        a:active{
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: orange;
+        }
+
+        a:active {
+            color: white;
             background-color: red;
         }
 
-        a:hover{
-            background-color: yellow;
+        /* First-child and Last-child */
+        p:first-child {
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
-
-        p:first-child{
-            background-color: aqua;
+        p:last-child {
+            background-color: lightblue;
         }
 
+        /* Nth-child and Nth-of-type */
+        li:nth-child(odd) {
+            background-color: lightgray;
+        }
+
+        li:nth-child(even) {
+            background-color: whitesmoke;
+        }
+
+        li:nth-of-type(3) {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        /* Not Selector */
+        p:not(.highlight) {
+            font-size: 1.1rem;
+        }
+
+        /* Empty Selector */
+        div:empty {
+            background-color: lightpink;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px dashed red;
+        }
+
+        /* Before and After */
+        p::before {
+            content: "🌟 ";
+            color: gold;
+        }
+
+        p::after {
+            content: " 🌟";
+            color: gold;
+        }
+
+        /* Only-child and Only-of-type */
+        span:only-child {
+            background-color: lightcoral;
+            padding: 5px;
+        }
+
+        p:only-of-type {
+            border: 2px solid blue;
+        }
+
+        /* Focus and Disabled */
+        input:focus {
+            outline: 3px solid orange;
+        }
+
+        input:disabled {
+            background-color: lightgray;
+        }
+
+        /* Hover Effects */
+        button:hover {
+            background-color: black;
+            color: white;
+            border: 2px solid orange;
+        }
     </style>
 </head>
 <body>
-    <main class="one">
-        <p>I am first</p>
-        <p>I am second</p>
-    </main>
-    <div class="red">
-        I am a div
-        <article>
+    <h1>Complete CSS Selectors Guide</h1>
 
-            <p>I am a para inside div</p>
-        </article>
+    <!-- Universal Selector -->
+    <p>This paragraph is styled using the Universal Selector (*).</p>
+
+    <!-- Element Selector -->
+    <h2>Element Selector Demonstration:</h2>
+    <p>This is a paragraph styled using the Element Selector.</p>
+
+    <!-- Class Selector -->
+    <p class="highlight">This paragraph is styled using a Class Selector.</p>
+
+    <!-- ID Selector -->
+    <div id="unique">This div is styled using an ID Selector.</div>
+
+    <!-- Group Selector -->
+    <p>Grouped elements, including this paragraph, are styled the same way.</p>
+    <a href="https://example.com">This link is also part of the group.</a>
+
+    <!-- Child Selector -->
+    <div>
+        <p>This is styled using a Child Selector.</p>
+        <span>This span is not targeted.</span>
     </div>
 
-    <div id="green">
-        I am another div
+    <!-- Descendant Selector -->
+    <div>
+        <p>This is styled using a Descendant Selector.</p>
     </div>
-    <a href="https://www.google.com">Go to Google</a>
-    <a href="https://www.facebook2.com">Go to Facebook</a>
+
+    <!-- Sibling Selectors -->
+    <h2>Sibling Selector Demonstration:</h2>
+    <p>This is styled with the Adjacent Sibling Selector.</p>
+    <p>This is styled with the General Sibling Selector.</p>
+
+    <!-- Attribute Selector -->
+    <h2>Attribute Selector Example:</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="submit" value="Submit">
+        <input type="text" disabled placeholder="Disabled input">
+    </form>
+
+    <!-- Pseudo-classes -->
+    <h2>Pseudo-classes Example:</h2>
+    <a href="https://google.com">Visit Google</a>
+
+    <!-- First-child and Last-child -->
+    <div>
+        <p>I am the first child paragraph.</p>
+        <p>I am another paragraph.</p>
+        <p>I am the last child paragraph.</p>
+    </div>
+
+    <!-- Nth-child and Nth-of-type -->
+    <h2>Ordered List Example:</h2>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+    <!-- Empty Selector -->
+    <div></div>
+
+    <!-- Before and After -->
+    <p>This paragraph demonstrates ::before and ::after pseudo-elements.</p>
+
+    <!-- Only-child and Only-of-type -->
+    <div>
+        <span>This span is the only child.</span>
+    </div>
+    <div>
+        <p>This paragraph is the only of its type.</p>
+    </div>
+
+    <!-- Focus and Disabled -->
+    <h2>Focus Example:</h2>
+    <form>
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Focus on me">
+    </form>
+
+    <!-- Hover Effects -->
+    <button>Hover over me!</button>
 </body>
 </html>

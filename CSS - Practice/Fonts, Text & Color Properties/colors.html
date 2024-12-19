@@ -6,23 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colors</title>
     <style>
-        /* https://codepen.io/web-dot-dev/pen/ZELGraM */
+        /* The following is a demonstration of CSS color representation methods */
+
+        /* Basic styling for the header element */
         h1 {
-            /* color:darkred; */
-            /* color: #0BEE0B; */
-            /* color: rgb(76, 125, 59); */
-            /* color: rgba(255, 22, 5, 0.175) */
-            color: hsl(130, 61%, 44%);
-            background-color: rgb(76, 125, 59);
-            /* HSL - Hue Saturation Lightness */
+            /* 
+                1. Color Keywords:
+                Color keywords are predefined names that represent specific colors.
+                Examples: 'red', 'green', 'blue', 'black', 'white', etc.
+            */
+            /* color: darkred; This is the color keyword 'darkred' representing a shade of red */
+
+            /* 
+                2. Hexadecimal Color Code:
+                Colors can also be represented using hexadecimal values. 
+                The format is #RRGGBB where RR, GG, and BB represent red, green, and blue values in hexadecimal (0-255).
+            */
+            /* color: #0BEE0B; This is the hexadecimal code for a bright green color */
+
+            /* 
+                3. RGB (Red, Green, Blue):
+                RGB color model represents colors based on the combination of red, green, and blue components.
+                The syntax is rgb(red, green, blue), where each value ranges from 0 to 255.
+            */
+            color: rgb(76, 125, 59); /* This is a greenish color with RGB components: red=76, green=125, blue=59 */
+
+            /* 
+                4. RGBA (Red, Green, Blue, Alpha):
+                RGBA is an extension of RGB that includes an additional value, 'Alpha', to represent the color's transparency.
+                The syntax is rgba(red, green, blue, alpha), where alpha ranges from 0 (fully transparent) to 1 (fully opaque).
+            */
+            /* color: rgba(255, 22, 5, 0.175); This represents a red color with 17.5% opacity */
+
+            /* 
+                5. HSL (Hue, Saturation, Lightness):
+                The HSL color model defines colors using three components:
+                - Hue: The color itself (measured in degrees from 0 to 360)
+                - Saturation: The intensity of the color (percentage from 0% to 100%)
+                - Lightness: The brightness of the color (percentage from 0% to 100%)
+            */
+            color: hsl(130, 61%, 44%); /* This is a green color with Hue=130, Saturation=61%, Lightness=44% */
+
+            /* Background color for contrast */
+            background-color: rgb(76, 125, 59); /* The background color is set using the RGB model */
+        }
+
+        /* Styling for a paragraph */
+        p {
+            font-size: 16px;
+            color: rgb(0, 0, 0); /* This paragraph is black using RGB color */
         }
     </style>
 </head>
 
 <body>
-    <h1>Lets learn about colors</h1>
+    <h1>Let's Learn About Colors</h1>
+
     <p>
-        Color can be represented in:
+        Color can be represented in the following ways in CSS:
         <ol>
             <li>Color Keywords</li>
             <li>Hex Color Code</li>
@@ -30,6 +71,63 @@
             <li>RGBA</li>
             <li>HSL</li>
         </ol>
+    </p>
+
+    <h2>Color Representation Methods</h2>
+
+    <h3>1. Color Keywords</h3>
+    <p>
+        Color keywords are the simplest way to specify colors. These predefined names represent a wide variety of colors.
+        Examples of color keywords include:
+        <ul>
+            <li><code>red</code></li>
+            <li><code>blue</code></li>
+            <li><code>green</code></li>
+            <li><code>yellow</code></li>
+            <li><code>black</code></li>
+            <li><code>white</code></li>
+            <!-- More keywords are available in the CSS specification -->
+        </ul>
+    </p>
+
+    <h3>2. Hexadecimal Color Code</h3>
+    <p>
+        The hexadecimal color code uses six digits to define the color. The first two digits represent the red value, the second two represent green, and the last two represent blue.
+        <br>For example: <code>#FF5733</code> represents an orange color, where:
+        <ul>
+            <li>FF = Red component (255 in decimal)</li>
+            <li>57 = Green component (87 in decimal)</li>
+            <li>33 = Blue component (51 in decimal)</li>
+        </ul>
+    </p>
+
+    <h3>3. RGB (Red, Green, Blue)</h3>
+    <p>
+        In RGB, colors are represented as <code>rgb(red, green, blue)</code> where each value is between 0 and 255.
+        Example: <code>rgb(76, 125, 59)</code> creates a greenish color.
+        <br>Here, 76 is the red value, 125 is the green value, and 59 is the blue value.
+    </p>
+
+    <h3>4. RGBA (Red, Green, Blue, Alpha)</h3>
+    <p>
+        RGBA is similar to RGB, but it also includes an alpha value for transparency. The alpha value ranges from 0 (fully transparent) to 1 (fully opaque).
+        Example: <code>rgba(255, 22, 5, 0.175)</code> represents a red color with 17.5% opacity.
+    </p>
+
+    <h3>5. HSL (Hue, Saturation, Lightness)</h3>
+    <p>
+        In HSL, colors are represented using three values:
+        <ul>
+            <li>Hue: The color type, measured in degrees from 0 to 360 (e.g., 0 is red, 120 is green, 240 is blue)</li>
+            <li>Saturation: The intensity of the color, represented as a percentage (0% is gray, 100% is full color)</li>
+            <li>Lightness: The brightness of the color, also represented as a percentage (0% is black, 100% is white)</li>
+        </ul>
+        Example: <code>hsl(130, 61%, 44%)</code> is a green color with:
+        <ul>
+            <li>Hue: 130 (green)</li>
+            <li>Saturation: 61%</li>
+            <li>Lightness: 44%</li>
+        </ul>
     </p>
 </body>
 
