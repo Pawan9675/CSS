@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Dashboard</title>
+    <style>
+        :root {
+            --bg-primary: #f5f5f5;
+            --bg-secondary: #ffffff;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --accent: #2563eb;
+            --spacing: 1.5rem;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--spacing);
+        }
+
+        header {
+            grid-column: span 12;
+            background: var(--bg-secondary);
+            padding: var(--spacing);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section {
+            background: var(--bg-secondary);
+            padding: var(--spacing);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-stories { grid-column: span 8; }
+        .local-news { grid-column: span 4; }
+        .for-you { grid-column: span 8; }
+        .topics { grid-column: span 4; }
+        .fact-check { grid-column: span 12; }
+
+        h1 {
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin: 0 0 1rem 0;
+            color: var(--text-primary);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        img {
+            width: 100px;
+            height: 70px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .weather {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .top-stories,
+            .local-news,
+            .for-you,
+            .topics,
+            .fact-check {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Briefing</h1>
+            <div class="weather">Uttar Pradesh | 20°C</div>
+        </header>
+
+        <div class="section top-stories">
+            <h2>Top Stories</h2>
+            <ul>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Political news">
+                    <a href="#">Nitish Kumar's JDU Withdraws Support to BJP-Led Government in Manipur</a>
+                </li>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="US policy news">
+                    <a href="#">US Birthright Citizenship: Indian-American Lawmakers Oppose Policy</a>
+                </li>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Election news">
+                    <a href="#">Delhi Election: Kejriwal Releases AAP's 7-Point Manifesto</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section local-news">
+            <h2>Local News</h2>
+            <ul>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Traffic news">
+                    <a href="#">Pay Rs 1,500 fine at three places in Noida if you change lanes</a>
+                </li>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Education news">
+                    <a href="#">JEE Mains 2025 Live: Shift 2 Begins</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section for-you">
+            <h2>For You</h2>
+            <ul>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Education analysis">
+                    <a href="#">JEE Main 2025 Session 1 Day 1 Exam Analysis</a>
+                </li>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Telecom news">
+                    <a href="#">Airtel Launches Voice and SMS-Only Prepaid Plans</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section topics">
+            <h2>Your Topics</h2>
+            <ul>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Tech news">
+                    <a href="#">Samsung Galaxy Unpacked 2025: How to Watch</a>
+                </li>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Space news">
+                    <a href="#">Amazing Recent Discoveries by NASA</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section fact-check">
+            <h2>Fact Check</h2>
+            <ul>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Fact check">
+                    <a href="#">Akhilesh Yadav Takes Holy Dip at Maha Kumbh Mela? False</a>
+                </li>
+                <li>
+                    <img src="https://placehold.co/200x140" alt="Fact check">
+                    <a href="#">Viral Video of Man Blowing Conch at Mela is Fake</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

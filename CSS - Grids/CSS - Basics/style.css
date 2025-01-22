@@ -1,0 +1,162 @@
+/* Global Styling */
+body {
+    background-color: aqua; /* Sets a global background color for the page */
+    font-family: Arial, sans-serif; /* Sets the font for readability */
+}
+
+/* Heading Styling */
+h1 {
+    color: blue; /* Sets heading text color */
+    text-align: center; /* Centers the heading */
+    margin-bottom: 20px; /* Adds spacing below the heading */
+}
+
+
+/* Parent Grid Container */
+.grid-wrapper {
+    background-color: beige; /* Background color for the grid container */
+    border: 1px solid red;   /* Border for better visibility */
+
+    display: grid; /* Activates grid layout for the parent container */
+
+    /* Defining the columns in the grid */
+    /* Options for grid-template-columns: */
+
+    /* Fixed column widths */
+    /* grid-template-columns: 5rem 5rem 5rem; */ /* Three equal columns of 5rem width */
+    /* grid-template-columns: 5rem 10rem 15rem; */ /* Three columns of different widths */
+
+    /* Repeating columns with equal widths */
+    /* grid-template-columns: repeat(3, 5rem); */ /* Three columns, each 5rem wide */
+
+    /* Flexible column widths (proportional space) */
+    /* grid-template-columns: 1fr 1fr 1fr; */ /* Three columns of equal width using `fr` units */
+    /* grid-template-columns: 1fr 2fr 1fr; */ /* Three columns with unequal widths (2nd column takes twice the space) */
+
+    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+
+    /* Define Grid Rows */
+    /* Uncomment one of the following lines to experiment with row settings */
+    /* grid-template-rows: auto auto auto; */ /* Automatically adjusts rows to fit content */
+    /* grid-template-rows: 100px 150px 200px; */ /* Fixed heights for each row */
+
+    /* Spacing between rows and columns in the grid */
+    /* Row gap between grid items */
+    /* grid-row-gap: 1rem; */ /* Old syntax */
+    row-gap: 1rem; /* Space of 1rem between rows */
+
+    /* Column gap between grid items */
+    /* grid-column-gap: 1rem; */ /* Old syntax */
+    column-gap: 2rem; /* Space of 2rem between columns */
+
+    /* Combined gap property for rows and columns */
+    /* grid-gap: 1rem; */ /* Old syntax */
+    /* gap: 1rem; */ /* New syntax to set both row and column gaps at once */
+
+    /* Grid Alignment (Items Inside Cells) */
+    justify-items: center; /* Aligns grid items horizontally inside their cells */
+    align-items: center;   /* Aligns grid items vertically inside their cells */
+
+    /* Grid Alignment (Entire Grid) */
+    justify-content: center; /* Aligns the grid horizontally within the parent container */
+    align-content: center;   /* Aligns the grid vertically within the parent container */
+
+    /* Implicit Grid Tracks */
+    grid-auto-rows: 150px; /* Default height for rows added implicitly */
+    grid-auto-columns: 100px; /* Default width for columns added implicitly */
+}
+
+/* Styling for Individual Grid Items */
+.grid-wrapper > div {
+    padding: 3rem; /* Adds internal spacing inside each grid item */
+    background-color: brown; /* Sets the background color for each grid item */
+    color: white; /* Sets text color inside grid items */
+    text-align: center; /* Centers text inside grid items */
+    border: 1px solid white; /* Adds a white border around each grid item */
+    font-size: 1.5rem; /* Increases the font size for better readability */
+}
+
+/* Custom positioning for individual grid items */
+
+/* Item 7 spans 2 columns */
+/* Specific Grid Item Behavior */
+.item7 {
+    grid-column: span 2; /* Spans across 2 columns */
+    grid-row: span 1; /* Stays within a single row (default behavior) */
+}
+
+/* Item 8 spans 3 columns and starts at column 2 */
+.item8 {
+    /* Positioning item8 with advanced grid properties */
+    /* Various ways to define column span */
+
+    /* Option 1: Span across 3 columns */
+    /* grid-column: span 3; */
+
+    /* Option 2: Explicitly define start and end columns */
+    /* grid-column-start: 2; */ /* Starts at column 2 */
+    /* grid-column-end: 5; */   /* Ends at column 5 */
+    
+    /* Combines start and end columns in one shorthand */
+    grid-column: 2 / 5; /* Starts at column 2 and ends at column 5 */
+    grid-row: 2 / 4; /* Starts at row 2 and ends at row 4 */
+}
+
+/* Named Grid Areas (Optional) */
+.grid-wrapper {
+    grid-template-areas:
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer"; /* Defines layout with named areas */
+}
+
+.item1 {
+    grid-area: header; /* Places this item in the "header" area */
+}
+
+.item2 {
+    grid-area: main; /* Places this item in the "main" area */
+}
+
+.item3 {
+    grid-area: sidebar; /* Places this item in the "sidebar" area */
+}
+
+.item4 {
+    grid-area: footer; /* Places this item in the "footer" area */
+}
+
+/* Hover Effect for Grid Items */
+.grid-wrapper > div:hover {
+    background-color: green; /* Changes background color on hover */
+    color: yellow; /* Changes text color on hover */
+    transform: scale(1.1); /* Slightly enlarges the item */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Key CSS Grid Concepts (Inline Notes for Learning) */
+/* ---------------------------------------------
+1. **Grid Basics**
+   - `display: grid;`: Turns an element into a grid container.
+   - `grid-template-columns`: Defines the number and size of columns.
+   - `grid-template-rows`: Defines the number and size of rows.
+
+2. **Fractional Units**
+   - `fr`: Divides available space proportionally among grid tracks.
+
+3. **Grid Gaps**
+   - `row-gap` and `column-gap`: Add spacing between rows/columns.
+   - `gap`: Shorthand for both row-gap and column-gap.
+
+4. **Item Positioning**
+   - `grid-column` and `grid-row`: Place items in specific grid tracks.
+   - `grid-area`: Assigns items to named grid areas.
+
+5. **Alignment**
+   - `justify-items` and `align-items`: Align items inside cells.
+   - `justify-content` and `align-content`: Align the entire grid within the container.
+
+6. **Advanced Features**
+   - `grid-template-areas`: Simplifies layout creation with named areas.
+   - `grid-auto-rows` and `grid-auto-columns`: Handle implicit rows/columns.
+--------------------------------------------- */
