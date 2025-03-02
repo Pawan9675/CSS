@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overflow</title>
+    <style>
+        /* ==========================================================
+           🎨 CSS Overflow Property Explained
+           The overflow property controls how content is handled 
+           when it overflows its container.
+        ========================================================== */
+
+        /* ✅ Default behavior: Overflow visible */
+        .overflow-visible {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: lightblue;
+            overflow: visible;
+        }
+
+        /* ✅ Overflow Hidden: Hides excess content */
+        .overflow-hidden {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: rebeccapurple;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* ✅ Overflow Scroll: Adds scrollbar always */
+        .overflow-scroll {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: lightcoral;
+            overflow: scroll;
+        }
+
+        /* ✅ Overflow Auto: Adds scrollbar only when needed */
+        .overflow-auto {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: lightgreen;
+            overflow: auto;
+        }
+
+        /* ✅ Shorthand Overflow: X and Y */
+        .overflow-x-y {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: violet;
+            overflow: auto hidden; /* X has scroll if needed, Y is hidden */
+        }
+
+        /* ✅ Overflow-X: Controls horizontal overflow */
+        .overflow-x-scroll {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: gold;
+            overflow-x: scroll;
+            white-space: nowrap;
+        }
+
+        .overflow-x-hidden {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: lightgray;
+            overflow-x: hidden;
+        }
+
+        /* ✅ Overflow-Y: Controls vertical overflow */
+        .overflow-y-scroll {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: lightpink;
+            overflow-y: scroll;
+        }
+
+        .overflow-y-hidden {
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: skyblue;
+            overflow-y: hidden;
+        }
+
+        /* ✅ Text Overflow: Handles overflowing text */
+        .text-ellipsis {
+            width: 200px;
+            border: 2px solid black;
+            background-color: orange;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /* Adds "..." when text is cut off */
+        }
+
+        /* ✅ Text Overflow: Clip */
+        .text-clip {
+            width: 200px;
+            border: 2px solid black;
+            background-color: tomato;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip; /* Simply cuts off the text */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Overflow Property 🎨</h1>
+
+    <h2>📌 What is Overflow?</h2>
+    <p>
+        Sometimes, content inside an element is larger than its container.  
+        The <code>overflow</code> property decides how to handle such situations.  
+        It controls whether the extra content should be **visible, hidden, scrollable, or auto-managed**.
+    </p>
+
+    <h2>🔹 Overflow: Visible (Default Behavior)</h2>
+    <p>Content that exceeds the box remains fully visible.</p>
+    <div class="overflow-visible">
+        This text overflows out of the box! 🚀
+    </div>
+
+    <h2>🔹 Overflow: Hidden</h2>
+    <p>Excess content is **cut off** and hidden.</p>
+    <div class="overflow-hidden">
+        This text is too long but will be hidden...
+    </div>
+
+    <h2>🔹 Overflow: Scroll</h2>
+    <p>Always shows a scrollbar, even if content fits.</p>
+    <div class="overflow-scroll">
+        This text is scrollable. Try scrolling! 🎡
+    </div>
+
+    <h2>🔹 Overflow: Auto</h2>
+    <p>Only shows a scrollbar if content overflows.</p>
+    <div class="overflow-auto">
+        Scrollbars appear **only when needed**.
+    </div>
+
+    <h2>🔹 Overflow: Shorthand (X & Y)</h2>
+    <p>Setting `overflow` for X and Y separately.</p>
+    <div class="overflow-x-y">
+        X has scroll if needed, Y is hidden! 🌍
+    </div>
+
+    <h2>🔹 Controlling Overflow on X and Y Axis</h2>
+    <h3>📌 Overflow-X: Scroll</h3>
+    <p>Allows horizontal scrolling only.</p>
+    <div class="overflow-x-scroll">
+        This is a very long text that scrolls horizontally ➡️➡️➡️
+    </div>
+
+    <h3>📌 Overflow-X: Hidden</h3>
+    <p>Hides horizontal overflow.</p>
+    <div class="overflow-x-hidden">
+        This text will be cut off ⛔.
+    </div>
+
+    <h3>📌 Overflow-Y: Scroll</h3>
+    <p>Allows vertical scrolling only.</p>
+    <div class="overflow-y-scroll">
+        Line 1 <br> Line 2 <br> Line 3 <br> Line 4 <br> Line 5
+    </div>
+
+    <h3>📌 Overflow-Y: Hidden</h3>
+    <p>Hides vertical overflow.</p>
+    <div class="overflow-y-hidden">
+        Line 1 <br> Line 2 <br> Line 3 <br> Line 4 <br> Line 5
+    </div>
+
+    <h2>🔹 Text Overflow: Ellipsis</h2>
+    <p>When text is too long, it gets replaced by **"..."**.</p>
+    <div class="text-ellipsis">
+        This is a very long text but gets cut off...
+    </div>
+
+    <h2>🔹 Text Overflow: Clip</h2>
+    <p>When text is too long, it gets **simply cut off** without "..."</p>
+    <div class="text-clip">
+        This is a very long text but gets cut off directly
+    </div>
+
+</body>
+
+</html>
