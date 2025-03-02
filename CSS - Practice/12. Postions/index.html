@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Explained</title>
+    <style>
+
+        /* ✅ Reset Default Styles for Consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ✅ Better Readability */
+        body {
+            font-family: "Arial", sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            font-family: "Poppins", sans-serif;
+            margin-bottom: 10px;
+        }
+
+        /* 🔹 Common Box Styling */
+        .box {
+            height: 100px;
+            width: 80vw;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid black;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* ✅ Default Position (Static) */
+        .box-static {
+            background-color: gray;
+            position: static; /* Default behavior - follows normal document flow */
+        }
+
+        /* ✅ Relative Position */
+        .box-relative {
+            background-color: orange;
+            position: relative; /* Moves relative to its normal position */
+            top: 20px;
+            left: 30px;
+        }
+
+        /* ✅ Absolute Position */
+        .box-absolute {
+            background-color: royalblue;
+            position: absolute; /* Moves relative to nearest positioned ancestor */
+            top: 20px;
+            left: 30px;
+            width: 80%;
+            z-index: 0; /* 🔹 Lower priority */
+        }
+
+        /* ✅ Fixed Position */
+        .box-fixed {
+            background-color: red;
+            position: fixed; /* Stays fixed relative to the viewport */
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            z-index: 100; /* 🔹 Highest priority */
+        }
+
+        /* ✅ Sticky Position */
+        .box-sticky {
+            background-color: green;
+            position: sticky; /* Sticks to the top when scrolling */
+            top: 0px;
+            width: 100%;
+        }
+
+        /* ✅ Parent Container for Absolute Position */
+        .parent {
+            padding: 30px;
+            margin: 34px;
+            border: 3px solid purple;
+            position: relative; /* Important for absolute positioning inside */
+            padding-bottom: 80px; /* 🔹 Extra space to prevent overlap */
+        }
+
+        /* ✅ Float Example */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 2px solid black;
+            padding: 10px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .box-float {
+            background-color: brown;
+            width: 40%;
+            float: right;
+            margin: 10px;
+        }
+
+        /* Clearfix to Fix Float Issues */
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* ✅ CSS Z-Index Example */
+        .z-container {
+            position: relative;
+            height: 200px;
+            margin-top: 20px;
+            border: 2px solid black;
+        }
+
+        .z-box1 {
+            position: relative;
+            z-index: 1;
+            background-color: aqua;
+            height: 100px;
+            width: 50%;
+            border: 2px solid black;
+        }
+
+        .z-box2 {
+            position: absolute;
+            z-index: 3;
+            background-color: rosybrown;
+            height: 60px;
+            width: 70%;
+            left: 50px;
+            top: 30px;
+            border: 2px solid black;
+        }
+
+        .z-box3 {
+            position: absolute;
+            z-index: 2;
+            background-color: rebeccapurple;
+            width: 45%;
+            left: 70px;
+            top: 10px;
+            height: 100px;
+            border: 2px solid black;
+            color: white;
+        }
+
+        /* ✅ Exception Handling */
+        /* These properties make an element behave as if it's positioned */
+        .edge-case {
+            background-color: pink;
+            transform: translate(0); /* Can make an element behave like it's positioned */
+            filter: invert(0); /* Similar effect */
+            perspective: 0em; /* Affects rendering */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Position Property 📌</h1>
+
+    <h2>📌 What is Position?</h2>
+    <p>
+        The `position` property in CSS allows elements to be placed in **precise locations** on a webpage.  
+        It determines how elements interact with each other and how they behave when the page is scrolled.
+    </p>
+
+    <h2>🔹 Default: Static Position</h2>
+    <p>By default, all elements follow the normal document flow, meaning they appear in order as they are written in HTML.</p>
+    <div class="box box-static">Static Position</div>
+
+    <h2>🔹 Relative Position</h2>
+    <p>An element is positioned **relative to its original location**.  
+       You can move it using `top`, `left`, `right`, or `bottom`, but the space it originally occupied remains.</p>
+    <div class="box box-relative">Relative Position (Moved 20px down, 30px right)</div>
+
+    <h2>🔹 Absolute Position</h2>
+    <p>An element is positioned **relative to its nearest positioned ancestor** (an element with `relative`, `absolute`, or `fixed` positioning).  
+       If no such ancestor exists, it positions itself relative to the document.</p>
+    <div class="parent">
+        <div class="box box-absolute">Absolute Position (Inside Parent)</div>
+    </div>
+
+    <h2>🔹 Fixed Position</h2>
+    <p>The element stays **fixed on the screen**, meaning it does not move when the page is scrolled.</p>
+    <div class="box box-fixed">Fixed Position (Always at the bottom)</div>
+
+    <h2>🔹 Sticky Position</h2>
+    <p>A hybrid between `relative` and `fixed`. The element **behaves like relative until it reaches a set scroll position**, then sticks to that point.</p>
+    <div class="box box-sticky">Sticky Position (Sticks to top)</div>
+
+    <h2>🔹 Float Property</h2>
+    <p>Moves an element to the left or right, allowing text to wrap around it.</p>
+    <div class="container clearfix">
+        <div class="box box-float">Float Right</div>
+        <p>This paragraph wraps around the floated box. Floating was widely used before Flexbox and Grid.</p>
+    </div>
+
+    <h2>🔹 CSS Z-Index (Stacking Order)</h2>
+    <p>Controls the **layering of elements**. Elements with a higher `z-index` appear in front of elements with a lower `z-index`.</p>
+
+    <div class="z-container">
+        <div class="z-box1">Box 1 (z-index: 1)</div>
+        <div class="z-box2">Box 2 (z-index: 3 - Highest Priority)</div>
+        <div class="z-box3">Box 3 (z-index: 2)</div>
+    </div>
+
+    <h2>🔹 Edge Cases (Transform, Filter, Perspective)</h2>
+    <p>Properties like `transform` and `filter` can make an element behave as if it is positioned.</p>
+    <div class="box edge-case">Edge Case (Transform Applied)</div>
+
+</body>
+
+</html>
