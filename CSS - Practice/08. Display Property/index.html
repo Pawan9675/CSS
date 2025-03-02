@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Display Property - Full Showcase</title>
+    <title>CSS Display Property - Notes Format</title>
+
     <style>
-        /* Basic reset */
+        /* ✅ Basic Reset: Removes default margin & padding, applies box-sizing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Block-level element: Takes full width, starts a new line */
+        /* 🔵 BLOCK ELEMENT: Takes full width and starts a new line */
         .display-block {
-            display: block; /* Block element takes full width, pushes elements below */
+            display: block;  /* Block element takes full width */
             background-color: lightblue;
             padding: 20px;
             margin: 10px 0;
             border: 2px solid blue;
         }
 
-        /* Inline element: Takes only necessary space for content */
+        /* 🟢 INLINE ELEMENT: Takes only the necessary space for content */
         .display-inline {
-            display: inline; /* Inline element takes only the width of its content */
+            display: inline;  /* Inline element takes only content width */
             background-color: lightgreen;
             padding: 10px;
             margin: 5px;
             border: 2px dashed green;
         }
 
-        /* Inline-block element: Behaves like inline but allows dimensions like width/height */
+        /* 🔴 INLINE-BLOCK ELEMENT: Behaves like inline but allows dimensions */
         .display-inline-block {
-            display: inline-block; /* Inline-block allows setting width, height and margin */
+            display: inline-block;  /* Allows width, height, and margin */
             background-color: lightcoral;
             padding: 20px;
             margin: 10px;
@@ -40,61 +41,61 @@
             width: 150px; /* Width works in inline-block */
         }
 
-        /* Flexbox container: Allows flexible layout of its child elements */
+        /* 🟡 FLEX CONTAINER: Allows flexible arrangement of child elements */
         .display-flex {
-            display: flex; /* Flexbox container allows flexible arrangement of child elements */
+            display: flex;  /* Makes the container flex */
             background-color: lightyellow;
             padding: 20px;
             margin: 10px 0;
             border: 2px solid yellow;
-            justify-content: space-around; /* Space elements evenly inside the container */
+            justify-content: space-around;  /* Spacing between elements */
         }
 
-        /* Grid container: Creates a grid layout with defined rows and columns */
+        /* 🌸 GRID CONTAINER: Creates a structured grid layout */
         .display-grid {
-            display: grid; /* Grid layout creates a grid with rows and columns */
-            grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-            gap: 10px; /* Space between grid items */
+            display: grid;  /* Enables grid layout */
+            grid-template-columns: repeat(3, 1fr);  /* Three equal columns */
+            gap: 10px;  /* Spacing between grid items */
             background-color: lightpink;
             padding: 20px;
             margin: 10px 0;
             border: 2px solid pink;
         }
 
-        /* Table layout: Mimics the behavior of HTML tables */
+        /* ⚪ TABLE DISPLAY: Mimics traditional table structure */
         .display-table {
-            display: table; /* Defines a table layout (mimics HTML <table> behavior) */
+            display: table;  /* Acts like an HTML <table> */
             background-color: lightgray;
             padding: 20px;
             margin: 10px 0;
             border: 2px solid gray;
         }
 
-        /* Table cell layout: Behaves like a cell in a table */
+        /* 🟢 TABLE CELL: Behaves like a table cell */
         .display-table-cell {
-            display: table-cell; /* Table cell behaves like <td> in a table */
+            display: table-cell;  /* Mimics <td> behavior */
             background-color: lightseagreen;
             padding: 10px;
             border: 2px dashed seagreen;
         }
 
-        /* Element hidden using display: none; removed from layout */
+        /* ❌ HIDDEN ELEMENT: Removed from layout (no space occupied) */
         .display-none {
-            display: none; /* Element is removed from layout, does not take up space */
+            display: none;  /* Element disappears completely */
         }
 
-        /* Element hidden but still occupying space using visibility: hidden */
+        /* ⚠️ INVISIBLE ELEMENT: Still occupies space but is not visible */
         .visibility-hidden {
-            visibility: hidden; /* Element is invisible but still takes up space */
+            visibility: hidden;  /* Element is invisible but still takes space */
             background-color: lightgoldenrodyellow;
             padding: 20px;
             margin: 10px;
             border: 2px solid gold;
         }
 
-        /* Element visible (default behavior) */
+        /* ✅ VISIBLE ELEMENT (default behavior) */
         .visibility-visible {
-            visibility: visible; /* Default visibility behavior, element is visible */
+            visibility: visible;  /* Default visibility */
             background-color: lightcyan;
             padding: 20px;
             margin: 10px;
@@ -106,41 +107,41 @@
 <body>
 
     <div>
-        <h1>CSS Display Property Showcase</h1>
+        <h1>🔥 CSS Display Property - Full Showcase</h1>
 
-        <!-- Block Display -->
+        <!-- 🟦 BLOCK DISPLAY EXAMPLE -->
         <div class="display-block">
-            <h2>Display Block</h2>
+            <h2>Block Display</h2>
             This box is displayed as a block-level element. It takes up the full width and starts on a new line.
         </div>
 
-        <!-- Inline Display -->
+        <!-- 🟩 INLINE DISPLAY EXAMPLE -->
         <div class="display-inline">
-            <h2>Display Inline</h2>
-            This box is displayed inline. It only takes up as much width as its content, and does not break to a new line.
+            <h2>Inline Display</h2>
+            This box is inline. It only takes up as much width as its content.
         </div>
         <div class="display-inline">
-            This is another inline element.
+            Another inline element (stays on the same line).
         </div>
 
-        <!-- Inline-Block Display -->
+        <!-- 🟥 INLINE-BLOCK DISPLAY EXAMPLE -->
         <div class="display-inline-block">
-            <h2>Display Inline-Block</h2>
-            This box behaves like an inline element but allows for width and height adjustments.
+            <h2>Inline-Block</h2>
+            Behaves like inline but allows width and height adjustments.
         </div>
         <div class="display-inline-block">
-            This is another inline-block element.
+            Another inline-block element.
         </div>
 
-        <!-- Flex Display -->
+        <!-- 🟡 FLEX DISPLAY EXAMPLE -->
         <div class="display-flex">
             <div>Flexbox 1</div>
             <div>Flexbox 2</div>
             <div>Flexbox 3</div>
         </div>
-        <p>Flexbox allows you to align and distribute items within a container.</p>
+        <p>Flexbox arranges items dynamically.</p>
 
-        <!-- Grid Display -->
+        <!-- 🌸 GRID DISPLAY EXAMPLE -->
         <div class="display-grid">
             <div>Grid Item 1</div>
             <div>Grid Item 2</div>
@@ -149,9 +150,9 @@
             <div>Grid Item 5</div>
             <div>Grid Item 6</div>
         </div>
-        <p>Grid layout allows for complex, two-dimensional layouts with rows and columns.</p>
+        <p>Grid layout allows structured layouts with rows and columns.</p>
 
-        <!-- Table Layout -->
+        <!-- ⚪ TABLE DISPLAY EXAMPLE -->
         <div class="display-table">
             <div class="display-table-cell">
                 <p>Table Cell 1</p>
@@ -160,20 +161,20 @@
                 <p>Table Cell 2</p>
             </div>
         </div>
-        <p>Table layout mimics the structure of a table with rows and cells.</p>
+        <p>Table layout mimics traditional table structures.</p>
 
-        <!-- Display None -->
+        <!-- ❌ HIDDEN ELEMENT EXAMPLE -->
         <div class="display-none">
-            <p>This element is hidden with display: none; it won't be visible and won't take up space.</p>
+            <p>This element is hidden with `display: none;` and takes up no space.</p>
         </div>
 
-        <!-- Visibility Hidden -->
+        <!-- ⚠️ INVISIBLE ELEMENT EXAMPLE -->
         <div class="visibility-hidden">
             <h2>Visibility Hidden</h2>
-            This element is invisible, but it still occupies space in the layout.
+            This element is invisible but still takes up space.
         </div>
 
-        <!-- Visibility Visible -->
+        <!-- ✅ VISIBLE ELEMENT EXAMPLE -->
         <div class="visibility-visible">
             <h2>Visibility Visible</h2>
             This element is visible (default behavior).

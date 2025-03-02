@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity & Cascade Explained</title>
+
+    <style>
+        /* ========================
+        🌟 CSS SPECIFICITY EXPLAINED 🌟
+        ======================== */
+
+        /* 
+        🔹 UNIVERSAL SELECTOR: Specificity = 0 
+        - Applies to all elements, but has the lowest priority.
+        */
+        * {
+            color: gray; /* Default text color */
+        }
+
+        /* 
+        🔹 ELEMENT SELECTOR: Specificity = 1
+        - Targets elements by their tag name.
+        - Overrides universal selector.
+        */
+        h1 {
+            color: pink; /* This applies to all <h1> elements */
+        }
+
+        /* 
+        🔹 CLASS SELECTOR: Specificity = 10
+        - Targets elements with a specific class.
+        - Overrides element and universal selectors.
+        */
+        .class-selector {
+            color: blue; /* Applied when class="class-selector" */
+        }
+
+        /* 
+        🔹 ID SELECTOR: Specificity = 100
+        - Targets elements with a specific ID.
+        - Overrides class, element, and universal selectors.
+        */
+        #id-selector {
+            color: red; /* Applied when id="id-selector" */
+        }
+
+        /* 
+        🔹 INLINE STYLE: Specificity = 1000
+        - Applied directly in the HTML element.
+        - Has the highest specificity (except !important).
+        */
+        /* Example: <h1 style="color: purple;"> */
+
+        /* 
+        🔹 ATTRIBUTE SELECTOR: Specificity = 10
+        - Targets elements with a specific attribute.
+        - Treated similar to a class selector.
+        */
+        [data-attribute="example"] {
+            color: orange; /* Applies to elements with this attribute */
+        }
+
+        /* 
+        🔹 PSEUDO-CLASS: Specificity = 10
+        - Applies styles when an element is in a particular state.
+        - Example: :hover, :focus, :nth-child(n)
+        */
+        h1:hover {
+            color: green; /* Changes color when hovered */
+        }
+
+        /* 
+        🔹 COMPLEX SELECTOR: Specificity = Sum of its parts
+        - Combines multiple selectors for higher specificity.
+        */
+        a.link.class1.class2[href]:hover {
+            color: purple; /* This selector has multiple components */
+        }
+
+        /* 
+        🔹 !IMPORTANT RULE: OVERRIDES ALL SPECIFICITY
+        - Forces a style to be applied, ignoring specificity.
+        - Use sparingly!
+        */
+        p {
+            color: yellow !important; /* Overrides all conflicting styles */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎨 CSS Specificity Demonstration</h1>
+
+    <!-- 🔹 Universal Selector Example -->
+    <p>* Universal Selector applied: Text is gray unless overridden.</p>
+
+    <!-- 🔹 Element Selector Example -->
+    <h1>Element Selector applied: Text is pink.</h1>
+
+    <!-- 🔹 Class Selector Example -->
+    <h1 class="class-selector">Class Selector applied: Text is blue.</h1>
+
+    <!-- 🔹 ID Selector Example -->
+    <h1 id="id-selector">ID Selector applied: Text is red.</h1>
+
+    <!-- 🔹 Inline Style Example -->
+    <h1 style="color: purple;">Inline Style applied: Text is purple.</h1>
+
+    <!-- 🔹 Attribute Selector Example -->
+    <h1 data-attribute="example">Attribute Selector applied: Text is orange.</h1>
+
+    <!-- 🔹 Pseudo-class Example -->
+    <h1 class="class-selector" id="id-selector">Hover over me to see green text!</h1>
+
+    <!-- 🔹 Complex Selector Example -->
+    <a href="#" class="link class1 class2" style="color: black;">Complex Selector applied: Hover to see purple text.</a>
+
+    <!-- 🔹 !important Example -->
+    <p>This paragraph is yellow because of !important.</p>
+
+    <h2>📌 Understanding Specificity</h2>
+    <p>🔹 Specificity values:</p>
+    <ul>
+        <li>🌍 Universal Selector (*): 0</li>
+        <li>🔹 Element Selector (e.g., h1, p): 1</li>
+        <li>🔹 Class Selector (e.g., .class): 10</li>
+        <li>🔹 Attribute Selector (e.g., [data-attribute]): 10</li>
+        <li>🔹 Pseudo-class (e.g., :hover): 10</li>
+        <li>🔹 ID Selector (e.g., #id): 100</li>
+        <li>🔹 Inline Style: 1000</li>
+        <li>⚠️ !important: Overrides all specificity values</li>
+    </ul>
+
+    <h2>🧮 Specificity Calculation Example</h2>
+    <p>Selector: <code>a.link.class1.class2[href]:hover</code></p>
+    <p>📊 Calculation:</p>
+    <ul>
+        <li>🔹 Element Selector (a): 1</li>
+        <li>🔹 Class Selectors (.link, .class1, .class2): 10 + 10 + 10 = 30</li>
+        <li>🔹 Attribute Selector ([href]): 10</li>
+        <li>🔹 Pseudo-class (:hover): 10</li>
+    </ul>
+    <p>📌 Total Specificity: <strong>1 + 30 + 10 + 10 = 51</strong></p>
+
+    <h2>⚡ CSS Cascade Algorithm</h2>
+    <p>📝 CSS stands for Cascading Stylesheets. The cascade determines which rule applies when multiple CSS rules affect the same element.</p>
+    
+    <p>🛠️ The cascade algorithm follows **4 stages**:</p>
+    <ul>
+        <li>1️⃣ <strong>Position & Order</strong>: The order in which CSS rules appear.</li>
+        <li>2️⃣ <strong>Specificity</strong>: Determines the strongest selector match.</li>
+        <li>3️⃣ <strong>Origin</strong>: Defines where CSS comes from (browser styles, extensions, or authored styles).</li>
+        <li>4️⃣ <strong>Importance</strong>: Some rules (e.g., !important) have higher weight.</li>
+    </ul>
+
+    <h2>🔍 Specificity Calculation Formula</h2>
+    <p>💡 To calculate specificity, assign values:</p>
+    <pre>
+Universal Selector:        0
+Element & Pseudo-elements: 1
+Class, Attribute, Pseudo-class: 10
+ID Selector:              100
+Inline Style:             1000
+    </pre>
+
+    <p>📢 Priority Order:</p>
+    <pre>
+1️⃣ Inline Style > 
+2️⃣ ID Selector > 
+3️⃣ Class / Attribute / Pseudo-class > 
+4️⃣ Element Selector > 
+5️⃣ Universal Selector
+    </pre>
+
+    <h2>📌 Summary</h2>
+    <p>✅ The final color applied depends on the highest specificity.</p>
+    <p>✅ If specificity is equal, the last rule in CSS is applied.</p>
+
+    <h2>🔬 Experiment Yourself!</h2>
+    <p>💡 Try modifying the order of selectors or adding new ones to see specificity in action!</p>
+
+</body>
+</html>

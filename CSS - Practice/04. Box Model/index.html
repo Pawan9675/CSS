@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Box Model</title>
+    <style>
+        /* 🎯 RESET DEFAULT STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensures consistent box model behavior */
+        }
+
+        /* 🎯 BOX STYLING */
+        .box {
+            background-color: lightblue;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* 🎯 BOX 1 - With Custom Dimensions and Border-Box */
+        .box1 {
+            color: yellow;
+            padding: 20px; /* Inside spacing */
+            margin: 30px; /* Outside spacing */
+            border: 4px solid blue; /* Border surrounding padding */
+            height: 150px; /* Content height */
+        }
+
+        /* 🎯 BOX 2 - For Comparison */
+        .box2 {
+            color: red;
+            padding: 15px;
+            margin: 25px;
+            border: 3px solid black;
+            height: 150px;
+        }
+
+        /* 🔍 BOX SIZING - CONTENT BOX */
+        .content-box-example {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid red;
+            margin: 10px;
+            box-sizing: content-box; /* Default behavior */
+        }
+
+        /* 🔍 BOX SIZING - BORDER BOX */
+        .border-box-example {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid green;
+            margin: 10px;
+            box-sizing: border-box; /* Includes padding & border inside width/height */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📦 CSS Box Model Demonstration</h1>
+
+    <!-- 📦 BOX MODEL EXAMPLES -->
+    <div class="box box1">I am a box (Box 1)</div>
+    <div class="box box2">I am another box (Box 2)</div>
+
+    <h2>📌 Understanding the Box Model</h2>
+    <p>The CSS Box Model consists of four main components:</p>
+    <ul>
+        <li><strong>Content:</strong> The actual text, image, or elements inside the box.</li>
+        <li><strong>Padding:</strong> The space between the content and the border.</li>
+        <li><strong>Border:</strong> The outer edge surrounding the padding.</li>
+        <li><strong>Margin:</strong> The space between this element and other elements.</li>
+    </ul>
+
+    <h2>📐 Calculating Box Dimensions</h2>
+    <p>The total size of an element is calculated as:</p>
+    <pre><code>
+Total Width  = Content Width  + Left Padding  + Right Padding  + Left Border  + Right Border  + Left Margin  + Right Margin
+Total Height = Content Height + Top Padding   + Bottom Padding + Top Border   + Bottom Border   + Top Margin   + Bottom Margin
+    </code></pre>
+    
+    <h2>🎯 Example Calculation</h2>
+    <pre><code>
+p {
+    width: 200px;
+    height: 300px;
+    padding: 20px;
+    border: 10px solid red;
+    margin: 5px;
+}
+    </code></pre>
+    <ul>
+        <li><strong>Total Width:</strong> 200px + 20px + 20px + 10px + 10px + 5px + 5px = <strong>270px</strong></li>
+        <li><strong>Total Height:</strong> 300px + 20px + 20px + 10px + 10px + 5px + 5px = <strong>370px</strong></li>
+    </ul>
+
+    <h2>⚠️ Margin Collapse</h2>
+    <p>When two vertical margins meet, they collapse into a single margin. The size of the collapsed margin is equal to the larger of the two margins.</p>
+
+    <h2>🔍 Box-Sizing: Content-Box vs. Border-Box</h2>
+    <p>The <code>box-sizing</code> property controls how width and height are calculated.</p>
+    <ul>
+        <li><strong>content-box (default):</strong> Width/height includes only the content. Padding & border add extra space.</li>
+        <li><strong>border-box:</strong> Width/height includes padding and border inside the specified size.</li>
+    </ul>
+
+    <!-- Content-Box Example -->
+    <h3>📌 Content-Box Example</h3>
+    <div class="content-box-example">Content-Box</div>
+    <p><strong>Width Calculation:</strong> 200px (content) + 20px + 20px (padding) + 5px + 5px (border) = <strong>250px</strong></p>
+
+    <!-- Border-Box Example -->
+    <h3>📌 Border-Box Example</h3>
+    <div class="border-box-example">Border-Box</div>
+    <p><strong>Width Calculation:</strong> 200px (content + padding + border) = <strong>200px</strong></p>
+
+    <h2>🔍 Inspect the Box Model</h2>
+    <p>Right-click any box and select <strong>Inspect</strong> in your browser to see how the box model is applied.</p>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Shadows and Outlines</title>
+    <style>
+        /* ==============================
+           Box Shadows (box-shadow)
+        =============================== */
+        .box-shadow-example {
+            width: 250px;
+            padding: 20px;
+            border: 2px solid black;
+            background-color: #e3f2fd;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 15px 5px #888888; /* Example Shadow */
+        }
+
+        /* ==============================
+           Text Shadows (text-shadow)
+        =============================== */
+        .text-shadow-example {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 2px 2px 4px #888888;
+        }
+
+        /* ==============================
+           Outlines (outline)
+        =============================== */
+        .outline-example {
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid black;
+            background-color: lightyellow;
+            margin-bottom: 20px;
+            outline: 2px solid blue;
+        }
+
+        /* ==============================
+           Border vs Outline
+        =============================== */
+        .border-example {
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            border: 4px solid blue;
+            margin-bottom: 20px;
+            background-color: #e1f5fe;
+        }
+
+        .outline-offset-example {
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            background-color: lightblue;
+            outline: 3px solid red;
+            outline-offset: 5px; /* Space between outline and element */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS Shadows and Outlines</h1>
+
+    <h2>Box Shadows</h2>
+    <p>The <code>box-shadow</code> property allows designers to add shadow effects around an element's frame. It is used to give a 3D feel or to emphasize elements on hover.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>box-shadow: h-offset v-offset blur spread color inset;</code></pre>
+    <ul>
+        <li><strong>h-offset</strong>: Determines the shadow's horizontal position.</li>
+        <li><strong>v-offset</strong>: Determines the shadow's vertical position.</li>
+        <li><strong>blur</strong>: The larger the value, the blurrier the shadow.</li>
+        <li><strong>spread</strong>: Expands or shrinks the shadow size.</li>
+        <li><strong>color</strong>: Defines the shadow color.</li>
+        <li><strong>inset</strong>: Makes the shadow inner.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>.box-shadow-example { box-shadow: 5px 5px 15px 5px #888888; }</code></pre>
+    <div class="box-shadow-example">Box with Shadow</div>
+
+    <h2>Text Shadows</h2>
+    <p>The <code>text-shadow</code> property is used to give shadows to text, enhancing readability or creating a unique appearance.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>text-shadow: h-offset v-offset blur color;</code></pre>
+    <p><strong>Example:</strong></p>
+    <pre><code>.text-shadow-example { text-shadow: 2px 2px 4px #888888; }</code></pre>
+    <p class="text-shadow-example">This is text with a shadow.</p>
+
+    <h2>Outlines</h2>
+    <p>The <code>outline</code> property defines a line drawn around elements, outside the borders, to make the element stand out. It's often used for accessibility purposes, like highlighting focused elements.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>outline: width style color;</code></pre>
+    <ul>
+        <li><strong>width</strong>: Sets the outline width.</li>
+        <li><strong>style</strong>: Determines the style of the outline (solid, dotted, dashed, etc.).</li>
+        <li><strong>color</strong>: Defines the outline color.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>.outline-example { outline: 2px solid blue; }</code></pre>
+    <div class="outline-example">Element with Outline</div>
+
+    <h2>Differences between Outlines and Borders</h2>
+    <p>Although outlines and borders can look similar, there are key differences:</p>
+    <ul>
+        <li><strong>Position:</strong> Outlines don't take up space; they are drawn outside the element.</li>
+        <li><strong>Offset:</strong> Using <code>outline-offset</code>, you can control the space between an outline and the element.</li>
+        <li><strong>Width:</strong> Borders can have different widths on each side, while outlines are uniform.</li>
+        <li><strong>Rounded Corners:</strong> Borders support <code>border-radius</code>, while outlines generally do not.</li>
+    </ul>
+
+    <h3>Example: Border vs Outline</h3>
+    <p><strong>Border Example:</strong></p>
+    <pre><code>.border-example { border: 4px solid blue; }</code></pre>
+    <div class="border-example">Element with Border</div>
+
+    <p><strong>Outline Example:</strong></p>
+    <pre><code>.outline-offset-example { outline: 3px solid red; outline-offset: 5px; }</code></pre>
+    <div class="outline-offset-example">Element with Outline and Offset</div>
+
+</body>
+</html>

@@ -1,20 +1,25 @@
-/* External CSS */
+/* 💡 EXTERNAL CSS FILE (style.css) 💡 */
+
+/* Styling for <h1> */
 h1 {
     background-color: red;
     color: yellow;
 }
 
+/* Class Selector */
 .highlight {
     background-color: lightgreen;
     color: black;
     padding: 10px;
 }
 
+/* General paragraph styling */
 p {
     font-size: 1.2rem;
     color: darkgreen;
 }
 
+/* ID Selector */
 #unique {
     background-color: lightblue;
     padding: 15px;
@@ -22,6 +27,7 @@ p {
     border: 2px solid darkblue;
 }
 
+/* Styling links */
 a {
     color: darkblue;
     text-decoration: none;

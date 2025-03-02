@@ -1,3 +1,13 @@
+<!--
+💡 CSS IN ACTION: INLINE, INTERNAL, AND EXTERNAL 💡
+
+📌 What is CSS?
+CSS (Cascading Style Sheets) is used to style HTML documents in three ways:
+1️⃣ **Inline CSS** → Applied directly to an HTML element using the `style` attribute.
+2️⃣ **Internal CSS** → Defined within a `<style>` block inside the `<head>` of an HTML document.
+3️⃣ **External CSS** → Linked via a `.css` file for consistent styling across multiple pages.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS in Action: Inline, Internal, and External</title>
     
-    <!-- Internal CSS: Defined in a <style> block inside the <head> -->
+    <!-- 💡 INTERNAL CSS 💡
+    - Defined inside a `<style>` block within `<head>`.
+    - Useful for styling a single page without modifying multiple elements individually.
+    -->
     <style>
         /* Internal CSS */
         h1 {
@@ -38,24 +51,32 @@
         }
     </style>
 
-    <!-- External CSS (linking to an external stylesheet file) -->
+    <!-- 💡 EXTERNAL CSS 💡
+    - External styles are linked using `<link>` and stored in a separate file (`style.css`).
+    - Best for maintaining consistency across multiple web pages.
+    -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Inline CSS: Directly added to the element -->
+    <!-- 💡 INLINE CSS 💡
+    - Directly applied within an element using the `style` attribute.
+    - Used for quick styling but not recommended for large-scale projects.
+    -->
     <h1 style="color: red; background-color: yellow;">Three Ways to Add CSS</h1>
 
     <div>
-        <p>This paragraph is styled using Internal CSS, set within the tag </p>
+        <p>This paragraph is styled using Internal CSS, set within the `<head>` tag.</p>
         <p class="highlight">This paragraph uses a Class Selector from Internal CSS.</p>
     </div>
 
-    <!-- Using External CSS for a consistent theme across multiple pages -->
+    <!-- 💡 USING EXTERNAL CSS 💡
+    - This div is styled using an ID selector from the external CSS file `style.css`.
+    -->
     <div id="unique">
         This div is styled using an ID selector from External CSS (style.css).
     </div>
 
-    <!-- Inline CSS on the link -->
+    <!-- 💡 INLINE CSS ON LINKS 💡 -->
     <a href="https://example.com" style="color: green;">Visit Example</a>
 
     <div>

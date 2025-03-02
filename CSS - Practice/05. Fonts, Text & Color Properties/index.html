@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete CSS Fonts & Text Properties Guide</title>
+
+    <!-- ✅ Method 1: Adding External Font Using <link> in <head> -->
+    <!-- This method is used when linking fonts directly from Google Fonts -->
+    <!-- Steps to use Google Fonts: 
+        1. Visit https://fonts.google.com/
+        2. Search for your desired font (e.g., "Baloo Bhai 2")
+        3. Click on the font and select styles (Regular, Bold, Italic, etc.)
+        4. Google Fonts will provide an <link> tag. Copy and paste it inside the <head> tag.
+        5. Use the font in CSS with `font-family: 'Font Name', fallback fonts;`
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        /* ✅ Method 2: Adding External Font Using @import in CSS */
+        /* This method is used inside the <style> tag or an external CSS file */
+        /* Steps to use: 
+            1. Visit https://fonts.google.com/
+            2. Choose a font and select styles.
+            3. Google Fonts will provide an @import rule. Copy and paste it inside the CSS file.
+            4. Use the font in CSS with `font-family: 'Font Name', fallback fonts;`
+        */
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
+
+        /* 🎨 FONT PROPERTY - COMPLETE GUIDE */
+
+        /* ✅ The font property (shorthand) */
+        /* 
+            Syntax: font: font-style font-variant font-weight font-size/line-height font-family;
+        */
+        h1 {
+            font: italic small-caps bold 28px/1.5 'Poppins', sans-serif;
+            /* Explanation:
+               - font-style: italic;
+               - font-variant: small-caps;
+               - font-weight: bold;
+               - font-size: 28px;
+               - line-height: 1.5;
+               - font-family: 'Poppins', sans-serif;
+            */
+            text-align: center;
+            text-decoration: underline;
+            color: #333;
+        }
+
+        /* ✅ Individual Font Properties */
+        p {
+            font-family: 'Baloo Bhai 2', sans-serif; /* Specifies the font */
+            font-size: 20px;  /* Text size */
+            font-style: normal; /* Normal, italic, or oblique */
+            font-weight: 500; /* Thickness: 100 (thin) to 900 (bold) */
+            line-height: 1.6; /* Space between lines */
+            letter-spacing: 1px; /* Space between letters */
+            word-spacing: 3px; /* Space between words */
+            text-decoration: none; /* Underline, overline, line-through */
+        }
+
+        /* ✅ TEXT PROPERTIES */
+        h2 {
+            text-transform: uppercase; /* Convert text to UPPERCASE */
+            text-decoration: underline; /* Underlines the text */
+            text-decoration-color: blue;
+            text-decoration-thickness: 3px;
+            text-align: center; /* Aligns text (left, center, right, justify) */
+        }
+
+        /* ✅ Text Indentation */
+        .text-indent {
+            text-indent: 50px; /* Adds space at the beginning of the paragraph */
+        }
+
+        /* ✅ Text Overflow Handling */
+        .text-overflow {
+            border: 2px solid red;
+            width: 200px;
+            white-space: nowrap; /* Prevents text from wrapping */
+            overflow: hidden; /* Hides overflow text */
+            text-overflow: ellipsis; /* Adds "..." at the end */
+        }
+
+        /* ✅ Word Wrapping */
+        .word-wrap {
+            width: 200px;
+            border: 2px solid green;
+            word-wrap: break-word; /* Allows words to break */
+            word-break: break-word; /* Breaks long words */
+        }
+
+        /* ✅ Applying Different Font Styles */
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .lowercase {
+            text-transform: lowercase;
+        }
+
+        .capitalize {
+            text-transform: capitalize;
+        }
+
+        /* ✅ Combining Multiple Text Properties */
+        .styled-text {
+            font: bold 18px/1.4 'Poppins', sans-serif;
+            text-align: center;
+            text-decoration: underline;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Complete CSS Fonts & Text Properties Guide</h1>
+        
+        <h2>Understanding Fonts in CSS</h2>
+        <p>This guide explains everything about fonts and text properties in CSS.</p>
+
+        <h2>External Fonts Usage</h2>
+        <p>We can use external fonts in two ways:</p>
+        <ul>
+            <li>Using <code>&lt;link&gt;</code> in the <code>&lt;head&gt;</code></li>
+            <li>Using <code>@import</code> inside the CSS file</li>
+        </ul>
+
+        <h2>Font Properties</h2>
+        <h3>1. Font Family</h3>
+        <p>Defines the typeface to be used. Example: <code>font-family: 'Poppins', sans-serif;</code></p>
+
+        <h3>2. Font Size</h3>
+        <p>Sets the size of the text. Example: <code>font-size: 20px;</code></p>
+
+        <h3>3. Font Weight</h3>
+        <p>Controls the thickness of text. Example: <code>font-weight: bold;</code></p>
+
+        <h3>4. Font Style</h3>
+        <p>Defines whether the text is normal, italic, or oblique. Example: <code>font-style: italic;</code></p>
+
+        <h3>5. Line Height</h3>
+        <p>Adjusts the space between lines. Example: <code>line-height: 1.5;</code></p>
+
+        <h3>6. Letter and Word Spacing</h3>
+        <p>Adjusts the spacing between letters and words.</p>
+        <ul>
+            <li>Letter spacing: <code>letter-spacing: 1px;</code></li>
+            <li>Word spacing: <code>word-spacing: 3px;</code></li>
+        </ul>
+
+        <h2>Text Properties</h2>
+        <p class="uppercase">uppercase text</p>
+        <p class="lowercase">LOWERCASE TEXT</p>
+        <p class="capitalize">capitalize each word</p>
+
+        <h3>Text Indentation</h3>
+        <p class="text-indent">This paragraph has an indentation.</p>
+
+        <h3>Text Overflow</h3>
+        <p class="text-overflow">This is a long text that will be truncated...</p>
+
+        <h3>Word Wrapping</h3>
+        <p class="word-wrap">This-is-a-very-long-word-without-spaces-to-show-word-wrap</p>
+
+        <h2>Styled Text Example</h2>
+        <p class="styled-text">this is a styled text example</p>
+    </div>
+</body>
+
+</html>

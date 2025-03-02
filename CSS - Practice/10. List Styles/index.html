@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS List Styles</title>
+    <style>
+        /* ==============================
+           Unordered List Styles
+        =============================== */
+        .ul-disc {
+            list-style-type: disc; /* Default: Filled circle */
+        }
+        .ul-circle {
+            list-style-type: circle; /* Hollow circle */
+        }
+        .ul-square {
+            list-style-type: square; /* Filled square */
+        }
+        .ul-none {
+            list-style-type: none; /* No marker (removes bullets) */
+        }
+
+        /* ==============================
+           Ordered List Styles
+        =============================== */
+        .ol-decimal {
+            list-style-type: decimal; /* Default: 1, 2, 3, ... */
+        }
+        .ol-decimal-zero {
+            list-style-type: decimal-leading-zero; /* 01, 02, 03, ... */
+        }
+        .ol-lower-roman {
+            list-style-type: lower-roman; /* i, ii, iii, ... */
+        }
+        .ol-upper-roman {
+            list-style-type: upper-roman; /* I, II, III, ... */
+        }
+        .ol-lower-alpha {
+            list-style-type: lower-alpha; /* a, b, c, ... */
+        }
+        .ol-upper-alpha {
+            list-style-type: upper-alpha; /* A, B, C, ... */
+        }
+
+        /* ==============================
+           List-Style Position
+        =============================== */
+        .ul-inside {
+            list-style-position: inside; /* Marker inside content box */
+        }
+        .ul-outside {
+            list-style-position: outside; /* Marker outside content box */
+        }
+
+        /* ==============================
+           Removing Default List Styles
+        =============================== */
+        .ul-remove {
+            list-style: none; /* Completely removes bullets */
+        }
+
+        /* ==============================
+           Custom List Styles
+        =============================== */
+        .ul-custom {
+            list-style-type: "🔥 "; /* Custom emoji as marker */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS List Styles</h1>
+
+    <h2>Unordered List Styling</h2>
+    <p>The <code>list-style-type</code> property is used to define the type of bullet point for unordered lists.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>list-style-type: value;</code></pre>
+    <ul>
+        <li><strong>disc</strong>: Default filled circle.</li>
+        <li><strong>circle</strong>: Hollow circle.</li>
+        <li><strong>square</strong>: Filled square.</li>
+        <li><strong>none</strong>: Removes the bullet points.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>.ul-disc { list-style-type: disc; }</code></pre>
+    <ul class="ul-disc">
+        <li>Disc marker (default)</li>
+        <li>This is an unordered list</li>
+    </ul>
+    <ul class="ul-circle">
+        <li>Circle marker</li>
+        <li>This is another unordered list</li>
+    </ul>
+    <ul class="ul-square">
+        <li>Square marker</li>
+        <li>Example with square bullets</li>
+    </ul>
+    <ul class="ul-none">
+        <li>No marker</li>
+        <li>Bullets removed</li>
+    </ul>
+
+    <h2>Ordered List Styling</h2>
+    <p>The <code>list-style-type</code> property also defines the numbering system for ordered lists.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>list-style-type: value;</code></pre>
+    <ul>
+        <li><strong>decimal</strong>: Default 1, 2, 3, ...</li>
+        <li><strong>decimal-leading-zero</strong>: 01, 02, 03, ...</li>
+        <li><strong>lower-roman</strong>: i, ii, iii, ...</li>
+        <li><strong>upper-roman</strong>: I, II, III, ...</li>
+        <li><strong>lower-alpha</strong>: a, b, c, ...</li>
+        <li><strong>upper-alpha</strong>: A, B, C, ...</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>.ol-decimal { list-style-type: decimal; }</code></pre>
+    <ol class="ol-decimal">
+        <li>Decimal format</li>
+        <li>Default numbering</li>
+    </ol>
+    <ol class="ol-decimal-zero">
+        <li>Leading zeros</li>
+        <li>Formatted as 01, 02, ...</li>
+    </ol>
+    <ol class="ol-lower-roman">
+        <li>Lowercase Roman numerals</li>
+        <li>Example: i, ii, iii...</li>
+    </ol>
+    <ol class="ol-upper-roman">
+        <li>Uppercase Roman numerals</li>
+        <li>Example: I, II, III...</li>
+    </ol>
+    <ol class="ol-lower-alpha">
+        <li>Lowercase alphabet</li>
+        <li>Example: a, b, c...</li>
+    </ol>
+    <ol class="ol-upper-alpha">
+        <li>Uppercase alphabet</li>
+        <li>Example: A, B, C...</li>
+    </ol>
+
+    <h2>List-Style Position</h2>
+    <p>The <code>list-style-position</code> property controls whether the bullet/number appears inside or outside the content box.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>list-style-position: inside | outside;</code></pre>
+    <ul>
+        <li><strong>inside</strong>: The marker is inside the text content.</li>
+        <li><strong>outside</strong>: The marker is placed outside the content box (default).</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>.ul-inside { list-style-position: inside; }</code></pre>
+    <ul class="ul-inside">
+        <li>Inside position</li>
+        <li>Marker inside content box</li>
+    </ul>
+    <ul class="ul-outside">
+        <li>Outside position</li>
+        <li>Marker outside content box</li>
+    </ul>
+
+    <h2>Removing Default List Styles</h2>
+    <p>The <code>list-style</code> property can be set to <code>none</code> to remove default bullets or numbering.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>list-style: none;</code></pre>
+    <p><strong>Example:</strong></p>
+    <pre><code>.ul-remove { list-style: none; }</code></pre>
+    <ul class="ul-remove">
+        <li>No list marker</li>
+        <li>Bullets are removed</li>
+    </ul>
+
+    <h2>Custom List Styles</h2>
+    <p>We can use emojis or custom text as list markers by setting <code>list-style-type</code> to a string.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>list-style-type: "🔥 ";</code></pre>
+    <p><strong>Example:</strong></p>
+    <pre><code>.ul-custom { list-style-type: "🔥 "; }</code></pre>
+    <ul class="ul-custom">
+        <li>🔥 Custom emoji bullet</li>
+        <li>🔥 Using an icon as marker</li>
+    </ul>
+
+</body>
+</html>

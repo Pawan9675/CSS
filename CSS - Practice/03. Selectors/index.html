@@ -1,11 +1,23 @@
 <!DOCTYPE html>
+<!--
+💡 COMPLETE CSS SELECTORS GUIDE 💡
+
+📌 What are CSS Selectors?
+CSS Selectors are patterns used to select elements in an HTML document for styling. This guide covers:
+✅ Universal, Element, Class, ID Selectors
+✅ Group, Child, Descendant, Sibling Selectors
+✅ Attribute, Pseudo-class, Pseudo-element Selectors
+✅ Advanced selectors like `nth-child`, `only-child`, `not()`, etc.
+-->
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete CSS Selectors Guide</title>
     <style>
-        /* Universal Selector */
+        /* 🌍 UNIVERSAL SELECTOR - Applies styles to ALL elements */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,19 +25,19 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Element Selector */
+        /* 🔤 ELEMENT SELECTOR - Targets specific HTML elements */
         h1, h2 {
             color: darkblue;
         }
 
-        /* Class Selector */
+        /* 🎨 CLASS SELECTOR - Targets elements with a specific class */
         .highlight {
             background-color: yellow;
             color: black;
             padding: 10px;
         }
 
-        /* ID Selector */
+        /* 🆔 ID SELECTOR - Targets an element with a specific ID (must be unique) */
         #unique {
             background-color: lightgreen;
             border: 2px solid darkgreen;
@@ -33,13 +45,13 @@
             text-align: center;
         }
 
-        /* Group Selector */
+        /* 📌 GROUP SELECTOR - Styles multiple elements at once */
         h1, p, a {
             text-align: center;
             color: steelblue;
         }
 
-        /* Child Selector */
+        /* 👶 CHILD SELECTOR - Targets direct child elements */
         div > p {
             color: navy;
             background-color: lightyellow;
@@ -47,24 +59,24 @@
             padding: 5px;
         }
 
-        /* Descendant Selector */
+        /* 🏠 DESCENDANT SELECTOR - Targets nested elements inside another */
         div p {
             font-style: italic;
             color: darkgray;
         }
 
-        /* Adjacent Sibling Selector */
+        /* ➕ ADJACENT SIBLING SELECTOR - Targets the next immediate sibling */
         h2 + p {
             color: purple;
             font-size: 1.2rem;
         }
 
-        /* General Sibling Selector */
+        /* 🔄 GENERAL SIBLING SELECTOR - Targets all next siblings */
         h2 ~ p {
             color: orange;
         }
 
-        /* Attribute Selector */
+        /* 🔍 ATTRIBUTE SELECTOR - Targets elements with specific attributes */
         input[type="text"] {
             border: 2px solid blue;
             padding: 5px;
@@ -78,55 +90,25 @@
             cursor: pointer;
         }
 
-        /* Pseudo-classes */
-        a:link {
-            color: darkblue;
-        }
+        /* 🎭 PSEUDO-CLASSES - Define special states */
+        a:link { color: darkblue; } /* Unvisited links */
+        a:visited { color: purple; } /* Visited links */
+        a:hover { text-decoration: underline; color: orange; } /* On hover */
+        a:active { color: white; background-color: red; } /* While clicking */
 
-        a:visited {
-            color: purple;
-        }
+        /* 🔝 FIRST-CHILD & LAST-CHILD - Select first & last elements */
+        p:first-child { font-weight: bold; text-transform: uppercase; }
+        p:last-child { background-color: lightblue; }
 
-        a:hover {
-            text-decoration: underline;
-            color: orange;
-        }
+        /* 🔢 NTH-CHILD & NTH-OF-TYPE - Target specific positions */
+        li:nth-child(odd) { background-color: lightgray; }
+        li:nth-child(even) { background-color: whitesmoke; }
+        li:nth-of-type(3) { font-style: italic; font-weight: bold; }
 
-        a:active {
-            color: white;
-            background-color: red;
-        }
+        /* 🚫 NOT SELECTOR - Exclude specific elements */
+        p:not(.highlight) { font-size: 1.1rem; }
 
-        /* First-child and Last-child */
-        p:first-child {
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        p:last-child {
-            background-color: lightblue;
-        }
-
-        /* Nth-child and Nth-of-type */
-        li:nth-child(odd) {
-            background-color: lightgray;
-        }
-
-        li:nth-child(even) {
-            background-color: whitesmoke;
-        }
-
-        li:nth-of-type(3) {
-            font-style: italic;
-            font-weight: bold;
-        }
-
-        /* Not Selector */
-        p:not(.highlight) {
-            font-size: 1.1rem;
-        }
-
-        /* Empty Selector */
+        /* ⏳ EMPTY SELECTOR - Selects elements with no content */
         div:empty {
             background-color: lightpink;
             height: 50px;
@@ -135,37 +117,19 @@
             border: 1px dashed red;
         }
 
-        /* Before and After */
-        p::before {
-            content: "🌟 ";
-            color: gold;
-        }
+        /* 🌟 BEFORE & AFTER - Insert content */
+        p::before { content: "🌟 "; color: gold; }
+        p::after { content: " 🌟"; color: gold; }
 
-        p::after {
-            content: " 🌟";
-            color: gold;
-        }
+        /* 🎭 ONLY-CHILD & ONLY-OF-TYPE - Target unique elements */
+        span:only-child { background-color: lightcoral; padding: 5px; }
+        p:only-of-type { border: 2px solid blue; }
 
-        /* Only-child and Only-of-type */
-        span:only-child {
-            background-color: lightcoral;
-            padding: 5px;
-        }
+        /* 👀 FOCUS & DISABLED - Handle input states */
+        input:focus { outline: 3px solid orange; }
+        input:disabled { background-color: lightgray; }
 
-        p:only-of-type {
-            border: 2px solid blue;
-        }
-
-        /* Focus and Disabled */
-        input:focus {
-            outline: 3px solid orange;
-        }
-
-        input:disabled {
-            background-color: lightgray;
-        }
-
-        /* Hover Effects */
+        /* 🎭 HOVER EFFECTS - Add interaction on hover */
         button:hover {
             background-color: black;
             color: white;
