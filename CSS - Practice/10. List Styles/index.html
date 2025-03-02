@@ -67,6 +67,21 @@
             list-style-type: "🔥 "; /* Custom emoji as marker */
         }
 
+         /* ==============================
+           List-Style Image
+        =============================== */
+        .ul-image {
+            list-style-image: url('bullet.png'); /* Custom image as marker */
+        }
+
+        /* ==============================
+           List-Style Shorthand
+        =============================== */
+        .ul-shorthand {
+            list-style: square inside url('bullet.png'); 
+            /* Combines list-style-type, position, and image */
+        }
+
     </style>
 </head>
 <body>
@@ -180,6 +195,28 @@
     <ul class="ul-custom">
         <li>🔥 Custom emoji bullet</li>
         <li>🔥 Using an icon as marker</li>
+    </ul>
+
+    <h2>List-Style Image</h2>
+    <p>The <code>list-style-image</code> property allows setting a custom image as the list marker.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>list-style-image: url('image-url');</code></pre>
+    <p><strong>Example:</strong></p>
+    <pre><code>.ul-image { list-style-image: url('bullet.png'); }</code></pre>
+    <ul class="ul-image">
+        <li>Custom image marker</li>
+        <li>Example with an image as bullet</li>
+    </ul>
+
+    <h2>List-Style Shorthand</h2>
+    <p>The <code>list-style</code> property is a shorthand that allows setting <code>list-style-type</code>, <code>list-style-position</code>, and <code>list-style-image</code> in a single declaration.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre><code>list-style: type position image;</code></pre>
+    <p><strong>Example:</strong></p>
+    <pre><code>.ul-shorthand { list-style: square inside url('bullet.png'); }</code></pre>
+    <ul class="ul-shorthand">
+        <li>Custom shorthand example</li>
+        <li>Combines multiple list properties</li>
     </ul>
 
 </body>
