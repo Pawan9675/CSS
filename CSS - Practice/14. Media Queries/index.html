@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries - Complete Guide</title>
+
+    <style>
+        /* ============================================
+           🎯 CSS Media Queries - Adaptive Styling
+           Media queries help make websites responsive 
+           by applying styles based on conditions like 
+           screen width, device type, or orientation.
+        ============================================ */
+
+        /* ✅ Default Body Styling */
+        body {
+            background-color: lightgray;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ✅ Container for Boxes */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* ✅ Individual Box Styling */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        /* Styling for Unordered List */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* ============================================
+           🎯 Media Queries Demonstration
+           Different styles will be applied based on 
+           screen conditions.
+        ============================================ */
+
+        /* ✅ When screen width is less than or equal to 800px */
+        @media only screen and (max-width: 800px) {
+            body {
+                background-color: steelblue; /* Changes background color */
+            }
+
+            .container {
+                flex-direction: column; /* Stacks boxes vertically */
+                align-items: center;
+            }
+        }
+
+        /* ✅ When screen width is less than or equal to 600px */
+        @media only screen and (max-width: 600px) {
+            body {
+                background-color: darkslategray; /* Changes background */
+                color: white; /* Changes text color */
+            }
+
+            .box {
+                width: 100%; /* Makes boxes full width */
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ When the device is in portrait mode */
+        @media screen and (orientation: portrait) {
+            body {
+                border: 5px solid purple; /* Adds a purple border */
+            }
+        }
+
+        /* ✅ When screen width is between 600px and 1000px */
+        @media (min-width: 600px) and (max-width: 1000px) {
+            body {
+                background-color: goldenrod; /* Changes background */
+            }
+
+            .box {
+                background-color: brown; /* Changes box color */
+            }
+        }
+
+        /* ✅ Print Media Query (For Print Mode) */
+        @media print {
+            body {
+                background-color: white; /* Makes it plain for printing */
+                color: black;
+            }
+
+            .box {
+                display: none; /* Hides boxes in print */
+            }
+        }
+
+        /* ✅ Using 'not' to exclude a condition */
+        @media not screen and (max-width: 600px) {
+            body {
+                background-color: pink; /* Applies when screen width is NOT ≤ 600px */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Media Queries 📌</h1>
+
+    <h2>🔹 What are Media Queries?</h2>
+    <p>
+        Media queries allow you to apply different styles based on screen size, orientation, and device type.  
+        They make websites responsive by adjusting layouts dynamically.
+    </p>
+
+    <h2>🔹 Syntax of a Media Query</h2>
+    <pre>
+        @media media-type and (condition) {
+            /* CSS rules */
+        }
+    </pre>
+
+    <h2>🔹 Example: Responsive Boxes</h2>
+    <p>
+        The boxes below change their layout based on screen width.  
+        Try resizing the browser window to see the effect!
+    </p>
+
+    <div class="container">
+        <div class="box">Windows</div>
+        <div class="box">MacOS</div>
+        <div class="box">Linux</div>
+        <div class="box">Android</div>
+    </div>
+
+    <h2>🔹 Key Features of Media Queries</h2>
+    <ul>
+        <li> max-width: Applies styles when the screen width is smaller than a given value.</li>
+        <li> min-width: Applies styles when the screen width is larger than a given value.</li>
+        <li> orientation: Targets specific orientations (portrait/landscape).</li>
+        <li> only: Ensures styles apply only to certain media types.</li>
+        <li> not: Excludes specific conditions from applying styles.</li>
+        <li> print: Applies styles when printing the page.</li>
+    </ul>
+
+    <h2>🔹 Different Media Types</h2>
+    <ul>
+        <li> screen: Applies styles to screens (monitors, smartphones, tablets).</li>
+        <li> print: Used for printed documents.</li>
+        <li> all: Applies styles to all devices.</li>
+        <li> speech: Targets screen readers.</li>
+    </ul>
+
+    <h2>🔹 Combining Conditions</h2>
+    <ul>
+        <li> Using and: <code>@media screen and (max-width: 600px) and (orientation: portrait)</code></li>
+        <li> Using or (comma separated): <code>@media screen and (max-width: 600px), (orientation: portrait)</code></li>
+        <li> Using not: <code>@media not screen and (max-width: 600px)</code></li>
+    </ul>
+
+</body>
+
+</html>
