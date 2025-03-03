@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Card Design</title>
+
+    <!-- Importing Google Fonts for better typography -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
+
+        /* Resetting default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensures padding and border are included in element size */
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f4f4f4; /* Light gray background for a modern look */
+            padding: 50px;
+            display: flex;
+            justify-content: center; /* Centers the cards */
+            align-items: center;
+            flex-wrap: wrap; /* Allows wrapping for responsiveness */
+            gap: 20px; /* Adds space between cards */
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: white;
+            width: 220px; /* Slightly increased width for better content spacing */
+            border-radius: 10px;
+            padding: 0 0 20px 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds depth to the card */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+        }
+
+        /* Card Hover Effect */
+        .card:hover {
+            transform: translateY(-5px); /* Lifts the card slightly */
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image Section */
+        .image {
+            padding: 10px;
+        }
+
+        .image img {
+            width: 100%; /* Ensures the image takes full width */
+            border-radius: 10px;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 10px 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Content Heading */
+        .content h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        /* Content Paragraph */
+        .content p {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Category Capsules */
+        .capsules {
+            padding: 10px 15px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .capsules span {
+            border: 1px solid gray;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-family: 'Baloo Bhai 2', sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        /* Button Section */
+        .button {
+            text-align: center;
+        }
+
+        /* Button Styling */
+        .button button {
+            padding: 8px 18px;
+            border-radius: 20px;
+            background-color: rgb(0, 123, 255);
+            color: white;
+            font-size: 12px;
+            margin-top: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        /* Button Hover Effect */
+        .button button:hover {
+            background-color: rgb(0, 100, 230);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Card 1 -->
+    <div class="card"> 
+        <div class="image">
+            <img src="https://images.pexels.com/photos/3880179/pexels-photo-3880179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Nature Image">
+        </div>
+
+        <div class="capsules">
+            <span>Nature</span>
+            <span>Lake</span>
+        </div>
+
+        <div class="content">
+            <h2>Beautiful Scenery</h2>
+            <p>Experience the beauty of nature with calm lakes and serene landscapes.</p>
+        </div>
+
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card"> 
+        <div class="image">
+            <img src="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Nature Image">
+        </div>
+
+        <div class="capsules">
+            <span>Forest</span>
+            <span>Wildlife</span>
+        </div>
+
+        <div class="content">
+            <h2>Into the Wild</h2>
+            <p>Explore dense forests filled with breathtaking wildlife and adventure.</p>
+        </div>
+
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card"> 
+        <div class="image">
+            <img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Nature Image">
+        </div>
+
+        <div class="capsules">
+            <span>Mountains</span>
+            <span>Hiking</span>
+        </div>
+
+        <div class="content">
+            <h2>Mountain Trails</h2>
+            <p>Conquer the highest peaks and witness the best sunrise views from the top.</p>
+        </div>
+
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+
+</body>
+</html>
