@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables Explained</title>
+    <style>
+
+        /* ✅ Defining Global Variables */
+        :root {
+            --primary-bg: #ff00f7;
+            /* Primary background color */
+            --secondary-bg: #e7a4f6;
+            /* Secondary background color */
+            --text-color: #333;
+            /* Default text color */
+            --padding-lg: 20px;
+            /* Large padding */
+            --padding-md: 15px;
+            /* Medium padding */
+            --opacity-light: 0.6;
+            /* Light opacity */
+            --border-thickness: 2px;
+            /* Border width */
+            --font-size-lg: 18px;
+            /* Large font size */
+        }
+
+        /* ✅ Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ✅ Navigation Styling */
+        .navbar {
+            background-color: var(--primary-bg);
+            padding: var(--padding-md);
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            padding: var(--padding-md);
+            opacity: var(--opacity-light);
+            border: var(--border-thickness) solid var(--secondary-bg);
+            font-size: var(--font-size-lg);
+        }
+
+        /* ✅ Overriding Variables for Specific Elements */
+        .navbar ul li:first-child {
+            --primary-bg: #f35708;
+            /* Overriding for this element */
+            background-color: var(--primary-bg, blue);
+        }
+
+        /* ✅ Container Styling */
+        .content-container {
+            background-color: var(--secondary-bg);
+            padding: var(--padding-lg);
+            font-size: var(--font-size-lg);
+            color: var(--text-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Variables (Custom Properties) 📌</h1>
+
+    <h2>📌 What are CSS Variables?</h2>
+    <p>
+        CSS Variables, also known as Custom Properties, allow you to store and reuse values throughout your stylesheet.
+        They help make CSS more manageable, flexible, and dynamic.
+    </p>
+
+    <h2>🔹 How to Declare a CSS Variable?</h2>
+    <p>
+        CSS variables are defined inside a selector using the `--` prefix,
+        and accessed using the `var()` function.
+    </p>
+    <pre>
+        /* ✅ Declaring a Variable */
+        :root {
+            --main-text-color: blue;
+        }
+
+        /* ✅ Using the Variable */
+        h1 {
+            color: var(--main-text-color);
+        }
+    </pre>
+
+    <h2>🔹 Scope of CSS Variables</h2>
+    <p>CSS Variables can be <strong>global</strong> or <strong>local</strong>:</p>
+    <ul>
+        <li><strong>Global Variables:</strong> Defined inside <code>:root</code>, making them accessible everywhere.
+        </li>
+        <li><strong>Local Variables:</strong> Defined inside an element, only affecting that specific element.</li>
+    </ul>
+
+
+
+    <h3>✅ Global Scope Example:</h3>
+    <pre>
+        :root {
+            --global-color: blue;
+        }
+
+        p {
+            color: var(--global-color);
+        }
+    </pre>
+
+    <h3>✅ Local Scope Example:</h3>
+    <pre>
+        .card {
+            --card-bg: lightgray;
+            background-color: var(--card-bg);
+        }
+    </pre>
+
+    <h2>🔹 Example: CSS Variables in Action</h2>
+    <div class="navbar">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+        <p>
+            This container uses a CSS variable for its background color.
+            You can change the variable value in `:root` and see the effect everywhere!
+        </p>
+    </div>
+
+    <h2>🔹 Overriding Variables</h2>
+    <p>
+        You can redefine a variable inside a specific selector to override its value.
+    </p>
+    <h3>✅ Overriding Example:</h3>
+    <pre>
+        .button {
+            --button-color: red;
+            background-color: var(--button-color);
+        }
+
+        /* Override for hover */
+        .button:hover {
+            --button-color: green;
+            background-color: var(--button-color);
+        }
+    </pre>
+
+    <h2>🔹 Fallback Values</h2>
+    <p>
+        If a variable is not defined, you can provide a fallback value using `var()`.
+    </p>
+    <h3>✅ Example:</h3>
+    <pre>
+        background-color: var(--theme-color, black); /* Uses black if --theme-color is undefined */
+    </pre>
+
+    <h2>🔹 Using CSS Variables in Media Queries</h2>
+    <p>
+        CSS variables can be modified in media queries to adapt to different screen sizes.
+    </p>
+    <h3>✅ Example:</h3>
+    <pre>
+        @media (max-width: 600px) {
+            :root {
+                --primary-bg: lightblue;
+            }
+        }
+    </pre>
+
+    <h2>🔹 Why Use CSS Variables?</h2>
+    <ul>
+        <li>✅ Makes styling consistent across large projects</li>
+        <li>✅ Easier theme switching (just change one variable!)</li>
+        <li>✅ Improves maintainability by avoiding repetitive values</li>
+        <li>✅ Allows dynamic updates using JavaScript</li>
+    </ul>
+
+    <h2>🔹 Changing CSS Variables with JavaScript</h2>
+    <p>
+        You can dynamically change CSS variable values using JavaScript.
+    </p>
+    <h3>✅ Example:</h3>
+    <pre>
+        /* Changing CSS variable using JavaScript */
+        document.documentElement.style.setProperty('--primary-bg', 'yellow');
+    </pre>
+
+    <h2>🔹 Summary</h2>
+    <ul>
+        <li><strong>CSS Variables</strong> make styling more maintainable and flexible.</li>
+        <li>They can be <strong>global</strong> or <strong>local</strong> depending on where they are declared.</li>
+        <li>You can <strong>override</strong> them inside specific elements.</li>
+        <li>They support <strong>fallback values</strong> if a variable is undefined.</li>
+        <li>You can dynamically <strong>update them using JavaScript</strong>.</li>
+    </ul>
+
+
+</body>
+
+</html>
