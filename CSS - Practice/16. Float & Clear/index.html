@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float & Clear - Complete Guide</title>
+
+    <style>
+        /* ============================================
+           🎯 CSS Float & Clear - Styling and Concepts
+           Float is used for text wrapping and layout structuring.
+           Clear is used to prevent unwanted wrapping issues.
+        ============================================ */
+
+        /* ✅ Default Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* ✅ Container for Floating Elements */
+        .cards {
+            border: 2px solid black;
+            padding: 20px;
+            background-color: white;
+            display: flow-root; /* Fixes floating issues */
+        }
+
+        /* ✅ Floating Image */
+        img {
+            float: left; /* Moves the image to the left */
+            margin-right: 20px; /* Adds spacing between image and text */
+            border-radius: 10px;
+            width: 230px;
+        }
+
+        /* ✅ Individual Card */
+        .card {
+            border: 2px solid red;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #ffe5e5;
+        }
+
+        /* ✅ Clearing Floats */
+        .card:nth-child(3) {
+            background-color: aqua;
+            clear: both; /* Moves below floated elements */
+        }
+
+        /* ✅ Fix Floating Issues using Clearfix */
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* ✅ Example of Floating Elements */
+        .float-example {
+            margin: 30px auto;
+            width: 80%;
+            text-align: left;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+        }
+
+        .float-left {
+            float: left;
+            background-color: steelblue;
+        }
+
+        .float-right {
+            float: right;
+            background-color: darkred;
+        }
+
+        /* ✅ Clearing Floats Example */
+        .clear-both {
+            clear: both;
+            background-color: gray;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS Float & Clear 📌</h1>
+
+    <h2>🔹 What is Float?</h2>
+    <p>
+        The <code>float</code> property allows elements to be positioned 
+        to the <b>left</b> or <b>right</b>, making text or other elements wrap around it.
+    </p>
+
+    <h3>🔸 Float Syntax:</h3>
+    <pre>
+        float: left | right | none | inherit;
+    </pre>
+
+    <h2>🔹 What is Clear?</h2>
+    <p>
+        The <code>clear</code> property is used to <b>control the behavior</b> 
+        of elements around floated elements. It ensures that an element 
+        doesn't wrap around a floated sibling.
+    </p>
+
+    <h3>🔸 Clear Syntax:</h3>
+    <pre>
+        clear: left | right | both | none;
+    </pre>
+
+    <h2>🔹 Example: Floating Image with Text</h2>
+    <p>
+        The image below is floated to the left, and the text wraps around it.  
+        The last box is using <code>clear: both</code> to move below the floated elements.
+    </p>
+
+    <div class="cards clearfix">
+        <img src="https://media.istockphoto.com/id/928826678/photo/two-men-relaxing-and-fishing.jpg?s=2048x2048&w=is&k=20&c=fSG5LG9kxLNzjG9_YI1bXdz3-gD7UW2e2bd9arD5Vm8=" 
+             alt="Fishing Image">
+
+        <div class="card">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi fugiat ab tenetur praesentium sequi, nisi nesciunt officiis magnam ut at voluptatibus sapiente ducimus deleniti esse alias nihil. Soluta iure ipsum voluptatibus assumenda ratione ut?</p>
+        </div>
+
+        <div class="card">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore explicabo dignissimos a et sapiente sunt assumenda cupiditate veniam cumque ipsa? Autem quod, id itaque velit cupiditate ea quia sit laudantium asperiores. Culpa fuga libero odio consequatur et totam ratione tempore eos ipsum, soluta omnis, fugiat facere? Quam neque a pariatur debitis quos vero maiores, porro, voluptatum earum corporis deserunt dolore ipsa!
+        </div>
+
+        <div class="card">
+            <p>This card uses <code>clear: both;</code>, so it moves below the floated elements.</p>
+        </div>
+    </div>
+
+    <h2>🔹 Float Property Values</h2>
+    <ul>
+        <li><code>float: left;</code> → Moves the element to the <b>left</b>.</li>
+        <li><code>float: right;</code> → Moves the element to the <b>right</b>.</li>
+        <li><code>float: none;</code> → <b>Default value</b>, no floating.</li>
+        <li><code>float: inherit;</code> → Inherits the float value from its parent.</li>
+    </ul>
+
+    <h2>🔹 Clear Property Values</h2>
+    <ul>
+        <li><code>clear: left;</code> → Moves below <b>left-floated</b> elements.</li>
+        <li><code>clear: right;</code> → Moves below <b>right-floated</b> elements.</li>
+        <li><code>clear: both;</code> → Moves below <b>both left and right</b> floats.</li>
+        <li><code>clear: none;</code> → <b>Default</b>, allows wrapping around floated elements.</li>
+    </ul>
+
+    <h2>🔹 Example: Floating Elements</h2>
+    <div class="float-example">
+        <div class="box float-left">Left</div>
+        <div class="box float-right">Right</div>
+        <div class="clear-both">This element clears both sides</div>
+    </div>
+
+    <h2>🔹 Handling Float Issues</h2>
+    <ul>
+        <li>✅ <b>Text Wrapping</b>: Text automatically wraps around floated elements.</li>
+        <li>✅ <b>Collapsed Parent</b>: Use <code>overflow: hidden;</code> or <code>display: flow-root;</code> to fix.</li>
+        <li>✅ <b>Clearing Issues</b>: Use <code>clear: both;</code> or clearfix technique.</li>
+    </ul>
+
+</body>
+</html>
