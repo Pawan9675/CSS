@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors - Complete Guide</title>
+    
+    <style>
+        /* ==========================================================
+           🎯 CSS Selectors - Master Guide  
+           Covers all CSS selectors with explanations & examples.
+        ========================================================== */
+
+        /* ✅ Universal Selector */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* =============================================
+           🔹 1️⃣ BASIC SELECTORS
+           These are the most common selectors.
+        ============================================= */
+
+        /* ✅ Element Selector - Selects all <p> elements */
+        p {
+            color: darkblue;
+            font-size: 18px;
+        }
+
+        /* ✅ ID Selector - Selects the element with a specific ID */
+        #special {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* ✅ Class Selector - Selects all elements with the class */
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+
+        /* ✅ Grouping Selector - Applies styles to multiple selectors */
+        h1, h2, p {
+            font-family: Arial, sans-serif;
+        }
+
+        /* =============================================
+           🔹 2️⃣ COMBINATOR SELECTORS
+           Used to define relationships between elements.
+        ============================================= */
+
+        /* ✅ Descendant Selector - Selects all <p> inside .container */
+        .container p {
+            color: green;
+        }
+
+        /* ✅ Child Selector - Selects direct child <p> inside .container */
+        .container > p {
+            color: blue;
+        }
+
+        /* ✅ Adjacent Sibling Selector - Selects first <p> after <h2> */
+        h2 + p {
+            color: brown;
+        }
+
+        /* ✅ General Sibling Selector - Selects all <p> after <h2> */
+        h2 ~ p {
+            font-style: italic;
+        }
+
+        /* =============================================
+           🔹 3️⃣ PSEUDO-CLASS SELECTORS
+           These apply styles based on state.
+        ============================================= */
+
+        /* ✅ :first-child - Selects the first child */
+        .box:first-child {
+            background-color: lightblue;
+        }
+
+        /* ✅ :last-child - Selects the last child */
+        .box:last-child {
+            background-color: pink;
+        }
+
+        /* ✅ :nth-child(n) - Selects odd-numbered elements */
+        .box:nth-child(odd) {
+            background-color: lightgreen;
+        }
+
+        /* ✅ :nth-last-child(n) - Selects the second last child */
+        .box:nth-last-child(2) {
+            border: 2px solid black;
+        }
+
+         /* ✅ :nth-last-child(even) - Selects even-numbered elements from the end */
+         .box:nth-last-child(even) {
+            background-color: lightcoral;
+        }
+
+        /* ✅ :nth-last-child(odd) - Selects odd-numbered elements from the end */
+        .box:nth-last-child(odd) {
+            background-color: lightgoldenrodyellow;
+        }
+
+        /* ✅ :only-child - Selects an element that is the only child */
+        .box:only-child {
+            background-color: gold;
+        }
+
+        /* ✅ :hover - Changes background when hovered */
+        .hover-box:hover {
+            background-color: orange;
+        }
+
+        /* ✅ Link Pseudo-classes */
+        a:hover { color: orange; }  /* When mouse hovers */
+        a:focus { color: blue; }    /* When clicked */
+        a:active { color: red; }    /* When actively clicked */
+
+        /* ✅ :focus - Styles input when focused */
+        input:focus {
+            border: 2px solid blue;
+        }
+
+        /* ✅ :not() - Excludes elements from selection */
+        .boxes div:not(.special) {
+            background-color: lightgray;
+        }
+
+        /* ✅ :checked - Styles checked checkboxes */
+        input[type="checkbox"]:checked {
+            box-shadow: 0px 0px 10px green;
+        }
+
+        /* ✅ :disabled - Styles disabled inputs */
+        input:disabled {
+            background-color: lightgray;
+        }
+
+        /* ✅ :enabled - Styles active inputs */
+        input:enabled {
+            border: 2px solid green;
+        }
+
+        /* ✅ :required - Highlights required inputs */
+        input:required {
+            border: 2px dashed red;
+        }
+
+        /* ✅ :target - Styles an element when targeted */
+        #section1:target {
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        /* ✅ :lang() - Styles quotes based on language */
+        q:lang(fr) { quotes: "« " " »"; }
+        q:lang(en) { quotes: """ """; }
+
+        /* =============================================
+           🔹 4️⃣ PSEUDO-ELEMENT SELECTORS
+           Target parts of elements.
+        ============================================= */
+
+        /* ✅ ::first-letter - Styles first letter */
+        p::first-letter {
+            color: purple;
+            font-size: 24px;
+        }
+
+        /* ✅ ::first-line - Styles first line */
+        p::first-line {
+            font-weight: bold;
+        }
+
+        /* ✅ ::before - Adds content before */
+        .boxes::before {
+            content: "Start -> ";
+            color: blue;
+        }
+
+        /* ✅ ::after - Adds content after */
+        .boxes::after {
+            content: " <- End";
+            color: red;
+        }
+
+        /* ✅ ::selection - Changes highlight color */
+        ::selection {
+            background-color: black;
+            color: aqua;
+        }
+
+        /* ✅ ::placeholder - Styles placeholder text */
+        input::placeholder {
+            color: gray;
+            font-style: italic;
+        }
+
+        /* =============================================
+           🔹 5️⃣ ATTRIBUTE SELECTORS
+           Select elements based on attributes.
+        ============================================= */
+
+        /* ✅ [attribute] - Selects elements with "data-color" */
+        [data-color] {
+            color: darkred;
+        }
+
+        /* ✅ [attribute=value] - Selects elements with exact match */
+        input[type="text"] {
+            border: 1px solid blue;
+        }
+
+        /* ✅ [attribute~=value] - Selects elements where value is in a space-separated list */
+        [title~="important"] {
+            font-weight: bold;
+            color: red;
+        }
+
+        /* ✅ [attribute|=value] - Matches exact or prefix */
+        [lang|="en"] {
+            font-style: italic;
+        }
+
+        /* ✅ [attribute^=value] - Selects elements where attribute starts with value */
+        a[href^="https"] {
+            color: green;
+        }
+
+        /* ✅ [attribute$=value] - Selects elements where attribute ends with value */
+        a[href$=".pdf"] {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* ✅ [attribute*=value] - Selects elements where attribute contains value */
+        a[href*="docs"] {
+            text-decoration: underline;
+        }
+
+        /* =============================================
+           🎯 6️⃣ ADVANCED SELECTORS
+        ============================================= */
+
+        /* ✅ :not() (Excludes elements from selection) */
+        .list li:not(:first-child) {
+            color: brown;
+        }
+
+        /* ✅ :empty (Selects empty elements) */
+        div:empty {
+            border: 2px dashed black;
+            height: 50px;
+            width: 50px;
+        }
+
+        /* ✅ :target (Styles an element when targeted by a link) */
+        #section1:target {
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        /* Additional Styling for Better Demonstration */
+        body {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        section {
+            margin: 40px 0;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .selector-example {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-left: 4px solid #007bff;
+        }
+        
+        .code {
+            background-color: #f1f1f1;
+            padding: 5px;
+            font-family: monospace;
+            border-radius: 3px;
+        }
+        
+        .box {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .boxes div {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        .hover-box {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            background-color: #eee;
+        }
+        
+        .form-group {
+            margin: 15px 0;
+        }
+        
+        .list {
+            margin-left: 20px;
+        }
+        
+        .empty-container {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Selectors Master Guide 📌</h1>
+    <p>This guide covers all major CSS selectors with live examples to demonstrate how they work.</p>
+
+    <section id="basic-selectors">
+        <h2>1️⃣ Basic Selectors</h2>
+        <p>The foundation of CSS selection - the most commonly used selectors.</p>
+        
+        <div class="selector-example">
+            <h3>Universal Selector (*)</h3>
+            <p>Selects all elements. In this page, it sets <span class="code">margin: 0; padding: 0; box-sizing: border-box;</span> for everything.</p>
+            <div class="code">* { margin: 0; padding: 0; box-sizing: border-box; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>Element Selector</h3>
+            <p>This text is styled using the element selector - all paragraphs are set to darkblue with 18px font-size.</p>
+            <div class="code">p { color: darkblue; font-size: 18px; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>ID Selector (#)</h3>
+            <p id="special">This paragraph has the ID "special" - notice the red color and bold text.</p>
+            <div class="code">#special { color: red; font-weight: bold; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>Class Selector (.)</h3>
+            <p class="highlight">This paragraph has the "highlight" class - with yellow background.</p>
+            <div class="code">.highlight { background-color: yellow; padding: 5px; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>Grouping Selector</h3>
+            <p>Notice how h1, h2, and p elements all use Arial font - this is from the grouping selector.</p>
+            <div class="code">h1, h2, p { font-family: Arial, sans-serif; }</div>
+        </div>
+    </section>
+
+    <section id="combinator-selectors">
+        <h2>2️⃣ Combinator Selectors</h2>
+        <p>These selectors define relationships between elements.</p>
+        
+        <div class="selector-example">
+            <h3>Descendant Selector (space)</h3>
+            <div class="container">
+                <p>This is a paragraph inside .container - notice it's green because of the descendant selector.</p>
+                <div><p>This paragraph is inside a div, which is inside .container - still green!</p></div>
+            </div>
+            <div class="code">.container p { color: green; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>Child Selector (>)</h3>
+            <div class="container">
+                <p>This is a direct child paragraph - it's blue due to the child selector.</p>
+                <div><p>This paragraph is NOT a direct child - so it stays green from the descendant selector.</p></div>
+            </div>
+            <div class="code">.container > p { color: blue; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>Adjacent Sibling Selector (+)</h3>
+            <h2>This is an h2 element</h2>
+            <p>This paragraph is immediately after an h2 - it's brown due to adjacent sibling selector.</p>
+            <p>This paragraph comes later - not immediately after h2.</p>
+            <div class="code">h2 + p { color: brown; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>General Sibling Selector (~)</h3>
+            <h2>This is another h2 element</h2>
+            <p>This paragraph is after h2 - it's italic due to general sibling selector.</p>
+            <p>This paragraph is also after h2 - it's also italic!</p>
+            <div class="code">h2 ~ p { font-style: italic; }</div>
+        </div>
+    </section>
+
+    <section id="pseudo-class-selectors">
+        <h2>3️⃣ Pseudo-Class Selectors</h2>
+        <p>These selectors target elements based on their state or position.</p>
+        
+        <div class="selector-example">
+            <h3>Child Position Pseudo-classes</h3>
+            <div class="boxes">
+                <div class="box">First Box (lightblue - :first-child)</div>
+                <div class="box">Second Box (lightgreen - :nth-child(odd))</div>
+                <div class="box">Third Box (has border - :nth-last-child(2))</div>
+                <div class="box">Fourth Box (pink - :last-child, also lightcoral - :nth-last-child(even))</div>
+            </div>
+            <div class="code">
+                .box:first-child { background-color: lightblue; }<br>
+                .box:last-child { background-color: pink; }<br>
+                .box:nth-child(odd) { background-color: lightgreen; }<br>
+                .box:nth-last-child(2) { border: 2px solid black; }<br>
+                .box:nth-last-child(even) { background-color: lightcoral; }<br>
+                .box:nth-last-child(odd) { background-color: lightgoldenrodyellow; }
+            </div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>:only-child</h3>
+            <div>
+                <div class="box">This box is the only child - it should have gold background if it's the only child.</div>
+            </div>
+            <div class="code">.box:only-child { background-color: gold; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>:hover, :focus, :active</h3>
+            <button class="hover-box">Hover over me</button>
+            <a href="#">Hover, focus, or click this link to see different states</a>
+            <div class="code">
+                .hover-box:hover { background-color: orange; }<br>
+                a:hover { color: orange; }<br>
+                a:focus { color: blue; }<br>
+                a:active { color: red; }
+            </div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>Form-related Pseudo-classes</h3>
+            <div class="form-group">
+                <input type="text" placeholder="Focus me - border turns blue">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="check1"> <label for="check1">Check me - I glow green when checked</label>
+            </div>
+            <div class="form-group">
+                <input type="text" disabled placeholder="I'm disabled">
+            </div>
+            <div class="form-group">
+                <input type="text" required placeholder="I'm required">
+            </div>
+            <div class="code">
+                input:focus { border: 2px solid blue; }<br>
+                input[type="checkbox"]:checked { box-shadow: 0px 0px 10px green; }<br>
+                input:disabled { background-color: lightgray; }<br>
+                input:required { border: 2px dashed red; }
+            </div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>:not() Pseudo-class</h3>
+            <div class="boxes">
+                <div>Regular div</div>
+                <div class="special">Special div</div>
+                <div>Regular div</div>
+            </div>
+            <div class="code">.boxes div:not(.special) { background-color: lightgray; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>:lang() Pseudo-class</h3>
+            <p>An <q lang="en">English</q> quotation uses straight double quotes.</p>
+            <p>A <q lang="fr">French</q> quotation uses guillemets.</p>
+            <div class="code">
+                q:lang(fr) { quotes: "« " " »"; }<br>
+                q:lang(en) { quotes: """ """; }
+            </div>
+        </div>
+    </section>
+
+    <section id="pseudo-element-selectors">
+        <h2>4️⃣ Pseudo-Element Selectors</h2>
+        <p>These selectors target specific parts of elements.</p>
+        
+        <div class="selector-example">
+            <h3>::first-letter and ::first-line</h3>
+            <p>This paragraph demonstrates the first-letter (purple, larger) and first-line (bold) pseudo-elements. Try to select some text to see the custom selection style with black background and aqua text.</p>
+            <div class="code">
+                p::first-letter { color: purple; font-size: 24px; }<br>
+                p::first-line { font-weight: bold; }<br>
+                ::selection { background-color: black; color: aqua; }
+            </div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>::before and ::after</h3>
+            <div class="boxes">Some content in between</div>
+            <div class="code">
+                .boxes::before { content: "Start -> "; color: blue; }<br>
+                .boxes::after { content: " <- End"; color: red; }
+            </div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>::placeholder</h3>
+            <input type="text" placeholder="I have styled placeholder text">
+            <div class="code">input::placeholder { color: gray; font-style: italic; }</div>
+        </div>
+    </section>
+
+    <section id="attribute-selectors">
+        <h2>5️⃣ Attribute Selectors</h2>
+        <p>These selectors target elements based on their attributes.</p>
+        
+        <div class="selector-example">
+            <h3>[attribute]</h3>
+            <div data-color="red">This div has a data-color attribute - it's darkred.</div>
+            <div class="code">[data-color] { color: darkred; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>[attribute=value]</h3>
+            <input type="text" placeholder="Text inputs have blue borders">
+            <div class="code">input[type="text"] { border: 1px solid blue; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>[attribute~=value]</h3>
+            <div title="this is important note">This div has "important" in its title attribute.</div>
+            <div class="code">[title~="important"] { font-weight: bold; color: red; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>[attribute|=value]</h3>
+            <div lang="en-US">This div has lang="en-US" - it matches [lang|="en"].</div>
+            <div class="code">[lang|="en"] { font-style: italic; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>[attribute^=value]</h3>
+            <a href="https://example.com">This link starts with "https" - it's green.</a>
+            <div class="code">a[href^="https"] { color: green; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>[attribute$=value]</h3>
+            <a href="document.pdf">This link ends with ".pdf" - it's red and bold.</a>
+            <div class="code">a[href$=".pdf"] { color: red; font-weight: bold; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>[attribute*=value]</h3>
+            <a href="https://example.com/docs/file.html">This link contains "docs" - it's underlined.</a>
+            <div class="code">a[href*="docs"] { text-decoration: underline; }</div>
+        </div>
+    </section>
+
+    <section id="advanced-selectors">
+        <h2>6️⃣ Advanced Selectors</h2>
+        <p>Additional powerful selectors for specific use cases.</p>
+        
+        <div class="selector-example">
+            <h3>:not() in complex selectors</h3>
+            <ul class="list">
+                <li>First item (not brown due to :not(:first-child))</li>
+                <li>Second item (brown)</li>
+                <li>Third item (brown)</li>
+            </ul>
+            <div class="code">.list li:not(:first-child) { color: brown; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>:empty</h3>
+            <div class="empty-container">
+                <div>Not empty</div>
+                <div></div>
+            </div>
+            <div class="code">div:empty { border: 2px dashed black; height: 50px; width: 50px; }</div>
+        </div>
+        
+        <div class="selector-example">
+            <h3>:target</h3>
+            <p><a href="#section1">Click to target #section1</a></p>
+            <div id="section1">This is the target section. It will have yellow background when targeted.</div>
+            <div class="code">#section1:target { background-color: yellow; padding: 10px; }</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>This comprehensive guide covers most CSS selectors with practical examples.</p>
+        <p>Try interacting with the elements to see various states and behaviors!</p>
+    </footer>
+</body>
+</html>
